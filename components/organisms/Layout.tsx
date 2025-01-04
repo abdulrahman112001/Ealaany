@@ -9,13 +9,13 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div>
-      <TobNavbar/>
+    <div className="bg-MainBody">
+      <TobNavbar />
       <Navbar />
       {children}
       <Footer />
     </div>
-  );
+  )
 };
 
 export default Layout;

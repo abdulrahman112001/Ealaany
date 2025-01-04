@@ -3,17 +3,16 @@ import {
   Burger,
   Button,
   Center,
-  Collapse,
   Divider,
   Drawer,
   Group,
   HoverCard,
   ScrollArea,
-  UnstyledButton,
   useMantineTheme,
 } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-
+import Image from "next/image"
+import Link from "next/link"
 import classes from "../../styles/Navbar.module.css"
 
 export default function Navbar() {
@@ -23,11 +22,17 @@ export default function Navbar() {
   const theme = useMantineTheme()
 
   return (
-    <Box pb={120}>
+    <Box pb={40}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          {/* <MantineLogo size={30} /> */}
-          Logo
+          <Image
+            src="/images/logo.png"
+            alt="logo"
+            className="ml-16"
+            width={195}
+            height={36}
+          />
+
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home
@@ -43,25 +48,43 @@ export default function Navbar() {
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      Features
+                      About us
                     </Box>
-                    {/* <IconChevronDown size={16} color={theme.colors.blue[6]} /> */}
-                    icon
                   </Center>
                 </a>
               </HoverCard.Target>
             </HoverCard>
             <a href="#" className={classes.link}>
-              Learn
+              Services
             </a>
             <a href="#" className={classes.link}>
-              Academy
+              FAQs
+            </a>
+            <a href="#" className={classes.link}>
+              Contact us
             </a>
           </Group>
           <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Link href="/sign-up" passHref>
+              <Button
+                component="a"
+                variant="filled"
+                styles={{
+                  root: {
+                    borderRadius: "12px",
+                    backgroundColor: "#D83232",
+                    fontSize: "16px",
+                  },
+                }}
+              >
+                + Sign up
+              </Button>
+            </Link>
+            <a href="#" className="text-[#D83232] text-base font-bold mr-10">
+              Log in
+            </a>
           </Group>
+
           <Burger
             opened={drawerOpened}
             onClick={toggleDrawer}
@@ -86,13 +109,16 @@ export default function Navbar() {
             Home
           </a>
           <a href="#" className={classes.link}>
-            Test
+            About us
           </a>
           <a href="#" className={classes.link}>
-            Learn
+            Services
           </a>
           <a href="#" className={classes.link}>
-            Academy
+            FAQs
+          </a>
+          <a href="#" className={classes.link}>
+            Contact us
           </a>
 
           <Divider my="sm" />

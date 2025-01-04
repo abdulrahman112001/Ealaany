@@ -2,10 +2,10 @@ import { ReactNode } from "react";
 import { tv } from "tailwind-variants";
 
 const label = tv({
-  base: "inline-block capitalize !text-[#3F4254]  dark:!text-white",
+  base: "text-[14px]  font-poppins",
   variants: {
     color: {
-      primary: "text-[#3F4254]",
+      primary: "text-lightGray",
     },
     size: {
       sm: "text-sm",
@@ -20,7 +20,7 @@ const label = tv({
     color: "primary",
     size: "md",
   },
-});
+})
 
 export interface LabelProps_TP
   extends React.LabelHTMLAttributes<HTMLLabelElement> {

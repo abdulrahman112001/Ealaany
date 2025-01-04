@@ -104,127 +104,133 @@ function CorporateInformation() {
               name="mainOfficeAddress"
             />
           </div>
-        <div className="col-span-1">
-          <BaseInputField
-            label="corporate license number *"
-            placeholder="123456"
-            leftSection={
-              <Image
-                src="/images/license-line.png"
-                alt="license"
-                width={20}
-                height={20}
-              />
-            }
-            name="licenseNumber"
-            maxLength={6}
-            inputMode="numeric"
-          />
-
-          <DatePickerInput
-            label="corporate license date  *"
-            placeholder="date"
-            leftSection={
-              <Image
-                src="/images/calendar-empty.png"
-                alt="date"
-                width={20}
-                height={20}
-              />
-            }
-          />
-
-          {/* date input update */}
-        </div>
-
-        <div className="col-span-1">
-          <div className="flex-1">
-            <NativeSelect
-              label="corporate status"
-              //   value={value}
-              //   onChange={(event) => setValue(event.currentTarget.value)}
+          <div className="col-span-1">
+            <BaseInputField
+              label="corporate license number *"
+              placeholder="123456"
               leftSection={
                 <Image
-                  src="/images/id.png"
-                  alt="status"
+                  src="/images/license-line.png"
+                  alt="license"
                   width={20}
                   height={20}
                 />
               }
-              data={[
-                { value: "", label: "Selection item", disabled: true },
-                { value: "active", label: "active" },
-                { value: "inactive", label: "inactive" },
-              ]}
-              labelProps={{
-                className:
-                  "text-[14px] text-[#979C9E] font-poppins font-semibold",
-              }}
-              className="flex-1"
+              name="licenseNumber"
+              maxLength={6}
+              inputMode="numeric"
             />
-          </div>
 
-          <div className="flex-1">
-            <NativeSelect
-              label="corporate type"
-              //   value={value}
-              //   onChange={(event) => setValue(event.currentTarget.value)}
+            <DatePickerInput
+              label="corporate license date  *"
+              placeholder="date"
               leftSection={
-                <Image src="/images/id.png" alt="type" width={20} height={20} />
+                <Image
+                  src="/images/calendar-empty.png"
+                  alt="date"
+                  width={20}
+                  height={20}
+                />
               }
-              data={[
-                { value: "", label: "Selection item", disabled: true },
-                { value: "commercial", label: "commercial" },
-                { value: "non-profit", label: "non-profit" },
-              ]}
-              labelProps={{
-                className:
-                  "text-[14px] text-[#979C9E] font-poppins font-semibold",
-              }}
-              className="flex-1"
+            />
+
+            {/* date input update */}
+          </div>
+
+          <div className="col-span-1">
+            <div className="flex-1">
+              <NativeSelect
+                label="corporate status"
+                //   value={value}
+                //   onChange={(event) => setValue(event.currentTarget.value)}
+                leftSection={
+                  <Image
+                    src="/images/id.png"
+                    alt="status"
+                    width={20}
+                    height={20}
+                  />
+                }
+                data={[
+                  { value: "", label: "Selection item", disabled: true },
+                  { value: "active", label: "active" },
+                  { value: "inactive", label: "inactive" },
+                ]}
+                labelProps={{
+                  className:
+                    "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                }}
+                className="flex-1"
+              />
+            </div>
+
+            <div className="flex-1">
+              <NativeSelect
+                label="corporate type"
+                //   value={value}
+                //   onChange={(event) => setValue(event.currentTarget.value)}
+                leftSection={
+                  <Image
+                    src="/images/id.png"
+                    alt="type"
+                    width={20}
+                    height={20}
+                  />
+                }
+                data={[
+                  { value: "", label: "Selection item", disabled: true },
+                  { value: "commercial", label: "commercial" },
+                  { value: "non-profit", label: "non-profit" },
+                ]}
+                labelProps={{
+                  className:
+                    "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                }}
+                className="flex-1"
+              />
+            </div>
+          </div>
+
+          <div className="col-span-1">
+            <BaseInputField
+              label="company classification"
+              placeholder="name"
+              leftSection={
+                <Image
+                  src="/images/classification.png"
+                  alt="classification"
+                  width={20}
+                  height={20}
+                />
+              }
+              name="companyClassification"
             />
           </div>
-        </div>
 
-        <div className="col-span-1">
-          <BaseInputField
-            label="company classification"
-            placeholder="name"
-            leftSection={
-              <Image
-                src="/images/classification.png"
-                alt="classification"
-                width={20}
-                height={20}
-              />
-            }
-            name="companyClassification"
-          />
-        </div>
+          <div className="col-span-2">
+            <BaseInputField
+              label="main office fax"
+              placeholder="Select your verification method"
+              leftSection={
+                <Image src="/images/fax.png" alt="fax" width={20} height={20} />
+              }
+              name="mainOfficeFax"
+            />
+          </div>
 
-        <div className="col-span-2">
-          <BaseInputField
-            label="main office fax"
-            placeholder="Select your verification method"
-            leftSection={
-              <Image src="/images/fax.png" alt="fax" width={20} height={20} />
-            }
-            name="mainOfficeFax"
-          />
-        </div>
-
-        <div className="flex justify-between items-center mt-4 col-span-2">
-          <Button action={() => console.log("Submit clicked")} disabled>Submit</Button>
-          <Button
+          <div className="flex justify-between items-center mt-4 col-span-2">
+            <Button action={() => console.log("Submit clicked")} disabled>
+              Submit
+            </Button>
+            <Button
               className="w-[200px] "
               variant="outline"
-            action={() => console.log("Skip clicked")}
-          >
-            Skip
-          </Button>
+              action={() => console.log("Skip clicked")}
+            >
+              Skip
+            </Button>
+          </div>
         </div>
-        </div>
-
       </div>
     </Container>
   )

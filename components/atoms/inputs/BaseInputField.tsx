@@ -28,13 +28,13 @@ function BaseInputField({
       <Label htmlFor="name">
         {label}
         {required && <span className="mx-1">*</span>}
-     
       </Label>
 
       <TextInput
         // label={label}
         placeholder={placeholder}
         leftSection={leftSection}
+        // rightSection="dd "
         name={name}
         labelProps={{
           className: "text-[14px] text-[#979C9E] font-poppins font-semibold",

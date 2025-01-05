@@ -11,6 +11,7 @@ import { FiExternalLink } from "react-icons/fi"
 function SecurityAndLogicDetails() {
   const router = useRouter()
 
+  // State for the SelectComp value
   const [contactMethod, setContactMethod] = useState<{ value: string; label: string } | null>(null)
 
   return (

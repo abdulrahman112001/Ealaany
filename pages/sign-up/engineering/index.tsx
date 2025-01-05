@@ -1,9 +1,11 @@
+import Main from '@/components/template/SignUp/engineering/Main'
 import LayoutSignUp from '@/components/template/SignUp/LayoutSignUp'
-import React from 'react'
 
 function Engineering() {
   return (
-    <LayoutSignUp>Engineering</LayoutSignUp>
+    <LayoutSignUp>
+      <Main />
+    </LayoutSignUp>
   )
 }
 

@@ -1,9 +1,11 @@
+import Main from '@/components/template/SignUp/beneficiary/Main'
 import LayoutSignUp from '@/components/template/SignUp/LayoutSignUp'
-import React from 'react'
 
 function Beneficiary() {
   return (
-    <LayoutSignUp>Beneficiary</LayoutSignUp>
+    <LayoutSignUp>
+      <Main />
+    </LayoutSignUp>
   )
 }
 

@@ -1,6 +1,6 @@
+import { Button } from "@/components/atoms/buttons/Button";
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField";
-import SelectCountry from "@/components/molecules/Selects/SelectCountry";
 import { Container, NativeSelect } from "@mantine/core";
 import Image from "next/image";
 
@@ -10,15 +10,16 @@ import Image from "next/image";
 function ContactInformation() {
     return (
         <Container >
-            <h2 className="text-center text-2xl mx-auto ps-[85px] font-extrabold font-poppins pb-8">
+            <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
                 Contact Information
             </h2>
-            <div className="bg-white rounded-3xl p-8 shadow-2xl">
+            <div className="bg-white rounded-3xl p-8 w-[650px] shadow-2xl">
                 <p className="font-poppins text-base pb-6">About you</p>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="col-span-2">
                         <BaseInputField
-                            label="nick Name *"
+                            label="nick Name"
+                            required
                             placeholder="Informal or preferred name"
                             name="nickName"
                             leftSection={
@@ -32,7 +33,9 @@ function ContactInformation() {
                         />
                     </div>
                     <div className="col-span-2 mb-10">
-                        <PhoneNumberField onChange={() => { }} value="" />
+                        <PhoneNumberField
+                            label="secondary phone"
+                            onChange={() => { }} value="" />
                     </div>
 
                     <p className="font-poppins text-base pb-6 col-span-2">
@@ -40,7 +43,8 @@ function ContactInformation() {
                     </p>
                     <div className="col-span-2">
                         <BaseInputField
-                            label="municipality name *"
+                            label="municipality name "
+                            required
                             placeholder="Name"
                             name="municipality name"
                             leftSection={
@@ -54,21 +58,32 @@ function ContactInformation() {
                         />
                     </div>
 
-                    <div className="col-span-1">
-                        <div className="flex-1">
-                            <label
-                                htmlFor="country-select"
-                                className="text-[14px] text-[#979C9E] font-poppins "
-                            >
-                                municipality country *
-                            </label>
-                            <SelectCountry />
-                        </div>
+                    <div>
+                        <NativeSelect
+                            label="municipality country"
+                            value={"value"}
+                            required
+                            // onChange={(event) => setValue(event.currentTarget.value)}
+                            leftSection={
+                                <Image src="/images/id.png" alt="city" width={20} height={20} />
+                            }
+                            data={[
+                                { value: "", label: "Selection item", disabled: true },
+                                { value: "Egypt", label: "Egypt" },
+                                { value: "Saudia", label: "Saudia" },
+                                { value: "USA", label: "USA" },
+                            ]}
+                            labelProps={{
+                                className:
+                                    "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                            }}
+                        />
                     </div>
 
-                    <div className="col-span-1">
+                    <div >
                         <NativeSelect
-                            label="corporate city *"
+                            label="municipality city"
+                            required
                             value={"value"}
                             // onChange={(event) => setValue(event.currentTarget.value)}
                             leftSection={
@@ -85,13 +100,13 @@ function ContactInformation() {
                                 className:
                                     "text-[14px] text-[#979C9E] font-poppins font-semibold",
                             }}
-                            className="flex-1"
                         />
                     </div>
 
-                    <div className="col-span-2">
+                    <div>
                         <BaseInputField
-                            label="department *"
+                            label="department"
+                            required
                             placeholder="name"
                             leftSection={
                                 <Image
@@ -105,9 +120,9 @@ function ContactInformation() {
                         />
                     </div>
 
-                    <div className="col-span-2">
+                    <div >
                         <BaseInputField
-                            label="offcial position *"
+                            label="offcial position"
                             placeholder="name"
                             leftSection={
                                 <Image
@@ -123,6 +138,18 @@ function ContactInformation() {
 
                     <div className="col-span-2">
                         <BaseInputField
+                            label="Main Office Address "
+                            required
+                            placeholder="Physical address of the main office"
+                            leftSection={
+                                <Image src="/images/bag.png" alt="fax" width={20} height={20} />
+                            }
+                            name="mainOfficeAdress"
+                        />
+                    </div>
+
+                    <div className="col-span-2">
+                        <BaseInputField
                             label="main office fax"
                             placeholder="Select your verification method"
                             leftSection={
@@ -132,15 +159,17 @@ function ContactInformation() {
                         />
                     </div>
 
-                    <div className="col-span-2">
-                        <BaseInputField
-                            label="Main Office Address *"
-                            placeholder="Physical address of the main office"
-                            leftSection={
-                                <Image src="/images/bag.png" alt="fax" width={20} height={20} />
-                            }
-                            name="mainOfficeAdress"
-                        />
+                    <div className="flex justify-center items-center mt-4 col-span-2">
+                        <Button action={() => console.log("Submit clicked")} disabled>
+                            Submit
+                        </Button>
+                        <Button
+                            className="w-[200px] "
+                            variant="outline"
+                            action={() => console.log("Skip clicked")}
+                        >
+                            Skip
+                        </Button>
                     </div>
                 </div>
             </div>

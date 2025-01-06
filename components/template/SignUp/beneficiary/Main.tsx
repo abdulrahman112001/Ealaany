@@ -1,6 +1,6 @@
 import Breadcrumb from "@/components/molecules/Breadcrumb/Breadcrumb"
 import { Form, Formik } from "formik"
-import StepperAdvertiser from "./StepperAdvertiser"
+import StepperBeneficiary from "./StepperBeneficiary"
 
 function Main() {
     const links = [
@@ -11,8 +11,8 @@ function Main() {
         },
 
         {
-            name: "Advertiser",
-            href: "/sign-up/advertiser",
+            name: "beneficiary",
+            href: "/sign-up/beneficiary",
         },
     ]
     return (
@@ -20,7 +20,7 @@ function Main() {
             <Breadcrumb links={links} />
             <Formik initialValues={{}} onSubmit={(values) => { }}>
                 <Form>
-                    <StepperAdvertiser />
+                    <StepperBeneficiary />
                 </Form>
             </Formik>
         </div>

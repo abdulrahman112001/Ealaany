@@ -5,27 +5,105 @@
 body {
   font-family: Poppins !important;
 }
+
 @font-face {
   font-family: "PoppinsLight";
   src: url("/fonts/Poppins-Light.ttf") format("truetype");
-  font-weight: 300; /* Light */
+  font-weight: 300;
+  /* Light */
 }
 
 @font-face {
   font-family: "Poppins";
   src: url("/fonts/Poppins-Medium.ttf") format("truetype");
-  font-weight: 500; /* Medium */
+  font-weight: 500;
+  /* Medium */
 }
 
 @font-face {
   font-family: "PoppinsBold";
   src: url("/fonts/Poppins-Bold.ttf") format("truetype");
-  font-weight: 700; /* Bold */
+  font-weight: 700;
+  /* Bold */
 }
+
 header {
   border: none !important;
 }
 
-.react-tel-input .form-control{
-    width: 100% !important;
+.react-tel-input .form-control {
+  width: 100% !important;
+}
+
+
+/* Stepper */
+.mantine-Stepper-stepIcon {
+  border-color: #00CCDC !important;
+}
+
+.mantine-Stepper-stepBody {
+  padding-top: .7rem;
+  color: black;
+}
+
+.mantine-Stepper-step {
+  color: #00CCDC !important;
+}
+
+.mantine-Stepper-stepCompletedIcon {
+  background-color: #00CCDC !important;
+  border-radius: 50%;
+  width: 8 !important;
+  height: 8 !important;
+  font-size: 15px !important;
+}
+
+.mantine-Stepper-stepCompletedIcon svg {
+  width: 40% !important;
+  height: 30% !important;
+}
+
+.mantine-Stepper-stepIcon {
+  width: 10px !important;
+}
+
+/* Check boxs */
+.m_26063560:checked {
+  background-color: #00ccdc !important;
+  border-color: #00ccdc !important;
+}
+
+/* inputs */
+.mantine-Input-input:focus {
+  box-shadow: 0 0 1px 1px #00CCDC !important;
+  border-color: #00CCDC !important;
+}
+
+.mantine-PasswordInput-input:focus {
+  box-shadow: 0 0 1px 1px #00CCDC !important;
+  border-color: #00CCDC !important;
+}
+
+.m_ccf8da4c:focus-within {
+  box-shadow: 0 0 1px 1px #00CCDC !important;
+  border-color: #00CCDC !important;
+}
+
+/* select list  */
+.LanguagePicker_label__k7Kiu {
+  color: #b3bac2;
+  font-size: 15px !important;
+  font-weight: normal !important;
+}
+
+.tabler-icon {
+  color: #72777A !important;
+}
+
+.mantine-Menu-item:hover {
+  background-color: #CCE7EA;
+
+  .mantine-Menu-itemLabel {
+    color: #00CCDC !important;
+  }
 }

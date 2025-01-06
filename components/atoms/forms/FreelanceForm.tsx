@@ -1,5 +1,4 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
-import SelectCountry from "@/components/molecules/Selects/SelectCountry";
 import { NativeSelect } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
@@ -9,7 +8,8 @@ function FreelanceForm() {
         <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2">
                 <NativeSelect
-                    label="industry *"
+                    label="industry"
+                    required
                     value={"value"}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
@@ -29,21 +29,32 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div className="col-span-1">
-                <div className="flex-1">
-                    <label
-                        htmlFor="country-select"
-                        className="text-[14px] text-[#979C9E] font-poppins "
-                    >
-                        corporate country *
-                    </label>
-                    <SelectCountry />
-                </div>
+            <div>
+                <NativeSelect
+                    label="freelancer country"
+                    value={"value"}
+                    required
+                    // onChange={(event) => setValue(event.currentTarget.value)}
+                    leftSection={
+                        <Image src="/images/id.png" alt="city" width={20} height={20} />
+                    }
+                    data={[
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "Egypt", label: "Egypt" },
+                        { value: "Saudia", label: "Saudia" },
+                        { value: "USA", label: "USA" },
+                    ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
+                />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <NativeSelect
-                    label="corporate city *"
+                    label="freelancer city"
+                    required
                     value={"value"}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
@@ -64,9 +75,10 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <BaseInputField
-                    label="corporate license number *"
+                    label="corporate license number"
+                    required
                     placeholder="123456"
                     leftSection={
                         <Image
@@ -84,9 +96,10 @@ function FreelanceForm() {
 
             </div>
 
-            <div className="col-span-1">
+            <div >
                 <BaseInputField
                     label="occupation"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/license-line.png" alt="occupation" width={20} height={20} />
@@ -95,7 +108,7 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <DatePickerInput
                     label="freelancer license Expiry date  *"
                     placeholder="date"
@@ -109,7 +122,8 @@ function FreelanceForm() {
                     }
                 />
             </div>
-            <div className="col-span-1">
+
+            <div >
                 <DatePickerInput
                     label="date of birth"
                     placeholder="date"

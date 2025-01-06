@@ -3,22 +3,22 @@ import { Button } from "@/components/atoms/buttons/Button"
 import BaseInputField from "@/components/atoms/inputs/BaseInputField"
 import DatePickerInput from "@/components/atoms/inputs/DatePickerInput"
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField"
-import SelectCountry from "@/components/molecules/Selects/SelectCountry"
 import { Container, NativeSelect } from "@mantine/core"
 import Image from "next/image"
 
 function CorporateInformation() {
   return (
     <Container >
-      <h2 className="text-center text-2xl mx-auto ps-[85px] font-extrabold font-poppins pb-8">
+      <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
         corporate Information
       </h2>
-      <div className="bg-white rounded-3xl p-8 shadow-2xl">
+      <div className="bg-white rounded-3xl w-[650px] p-8 shadow-2xl">
         <p className="font-poppins text-base pb-6">About you</p>
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-2">
             <BaseInputField
-              label="nick Name *"
+              label="nick Name"
+              required
               placeholder="Informal or preferred name"
               name="nickName"
               leftSection={
@@ -31,16 +31,21 @@ function CorporateInformation() {
               }
             />
           </div>
+
           <div className="col-span-2 mb-10">
-            <PhoneNumberField onChange={() => { }} value="" />
+            <PhoneNumberField
+              label="secondary number"
+              onChange={() => { }} value="" />
           </div>
-          <p className="font-poppins text-base pb-6 col-span-2">
+
+          <p className="font-poppins text-base pb-2 col-span-2">
             About corporate
           </p>
 
           <div className="col-span-2">
             <BaseInputField
-              label="company name *"
+              label="company name"
+              required
               placeholder="Name"
               name="companyName"
               leftSection={
@@ -53,20 +58,33 @@ function CorporateInformation() {
               }
             />
           </div>
-          <div className="col-span-1">
-            <div className="flex-1">
-              <label
-                htmlFor="country-select"
-                className="text-[14px] text-[#979C9E] font-poppins "
-              >
-                corporate country *
-              </label>
-              <SelectCountry />
-            </div>
-          </div>
-          <div className="col-span-1">
+
+          <div>
             <NativeSelect
-              label="corporate city *"
+              label="corporate country"
+              value={"value"}
+              required
+              // onChange={(event) => setValue(event.currentTarget.value)}
+              leftSection={
+                <Image src="/images/id.png" alt="city" width={20} height={20} />
+              }
+              data={[
+                { value: "", label: "Selection item", disabled: true },
+                { value: "Egypt", label: "Egypt" },
+                { value: "Saudia", label: "Saudia" },
+                { value: "USA", label: "USA" },
+              ]}
+              labelProps={{
+                className:
+                  "text-[14px] text-[#979C9E] font-poppins font-semibold",
+              }}
+            />
+          </div>
+
+          <div>
+            <NativeSelect
+              label="corporate city"
+              required
               value={"value"}
               // onChange={(event) => setValue(event.currentTarget.value)}
               leftSection={
@@ -83,13 +101,13 @@ function CorporateInformation() {
                 className:
                   "text-[14px] text-[#979C9E] font-poppins font-semibold",
               }}
-              className="flex-1"
             />
           </div>
 
           <div className="col-span-2">
             <BaseInputField
-              label="main office address *"
+              label="main office address"
+              required
               placeholder="name"
               leftSection={
                 <Image
@@ -103,9 +121,10 @@ function CorporateInformation() {
             />
           </div>
 
-          <div className="col-span-1">
+          <div>
             <BaseInputField
-              label="corporate license number *"
+              label="corporate license number"
+              required
               placeholder="123456"
               leftSection={
                 <Image
@@ -119,7 +138,8 @@ function CorporateInformation() {
               maxLength={6}
               inputMode="numeric"
             />
-
+          </div>
+          <div>
             <DatePickerInput
               label="corporate license date  *"
               placeholder="date"
@@ -132,65 +152,60 @@ function CorporateInformation() {
                 />
               }
             />
-
-            {/* date input update */}
           </div>
 
-          <div className="col-span-1">
-            <div className="flex-1">
-              <NativeSelect
-                label="corporate status"
-                //   value={value}
-                //   onChange={(event) => setValue(event.currentTarget.value)}
-                leftSection={
-                  <Image
-                    src="/images/id.png"
-                    alt="status"
-                    width={20}
-                    height={20}
-                  />
-                }
-                data={[
-                  { value: "", label: "Selection item", disabled: true },
-                  { value: "active", label: "active" },
-                  { value: "inactive", label: "inactive" },
-                ]}
-                labelProps={{
-                  className:
-                    "text-[14px] text-[#979C9E] font-poppins font-semibold",
-                }}
-                className="flex-1"
-              />
-            </div>
-
-            <div className="flex-1">
-              <NativeSelect
-                label="corporate type"
-                //   value={value}
-                //   onChange={(event) => setValue(event.currentTarget.value)}
-                leftSection={
-                  <Image
-                    src="/images/id.png"
-                    alt="type"
-                    width={20}
-                    height={20}
-                  />
-                }
-                data={[
-                  { value: "", label: "Selection item", disabled: true },
-                  { value: "commercial", label: "commercial" },
-                  { value: "non-profit", label: "non-profit" },
-                ]}
-                labelProps={{
-                  className:
-                    "text-[14px] text-[#979C9E] font-poppins font-semibold",
-                }}
-                className="flex-1"
-              />
-            </div>
+          <div>
+            <NativeSelect
+              label="corporate status"
+              //   value={value}
+              //   onChange={(event) => setValue(event.currentTarget.value)}
+              leftSection={
+                <Image
+                  src="/images/id.png"
+                  alt="status"
+                  width={20}
+                  height={20}
+                />
+              }
+              data={[
+                { value: "", label: "Selection item", disabled: true },
+                { value: "active", label: "active" },
+                { value: "inactive", label: "inactive" },
+              ]}
+              labelProps={{
+                className:
+                  "text-[14px] text-[#979C9E] font-poppins font-semibold",
+              }}
+            />
           </div>
 
-          <div className="col-span-1">
+          <div >
+            <NativeSelect
+              label="corporate type"
+              //   value={value}
+              //   onChange={(event) => setValue(event.currentTarget.value)}
+              leftSection={
+                <Image
+                  src="/images/id.png"
+                  alt="type"
+                  width={20}
+                  height={20}
+                />
+              }
+              data={[
+                { value: "", label: "Selection item", disabled: true },
+                { value: "commercial", label: "commercial" },
+                { value: "non-profit", label: "non-profit" },
+              ]}
+              labelProps={{
+                className:
+                  "text-[14px] text-[#979C9E] font-poppins font-semibold",
+              }}
+            />
+
+          </div>
+
+          <div className="col-span-2">
             <BaseInputField
               label="company classification"
               placeholder="name"

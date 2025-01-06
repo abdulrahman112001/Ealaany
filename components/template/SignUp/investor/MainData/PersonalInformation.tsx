@@ -3,20 +3,18 @@ import GoogleSignUpButton from "@/components/atoms/buttons/GoogleSignUpButton"
 import LoginLink from "@/components/atoms/buttons/LoginLink"
 import BaseInputField from "@/components/atoms/inputs/BaseInputField"
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField"
-import { Container, Group } from "@mantine/core"
+import { Container } from "@mantine/core"
 import Image from "next/image"
 
 function PersonalInformation() {
   return (
     <Container>
       <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
-        <h2 className="text-center text-2xl font-extrabold font-poppins ">
-          Personal Information
-        </h2>
+        Personal Information
       </h2>
-      <div className="bg-white rounded-3xl w-[600px] p-8 shadow-2xl">
+      <div className="bg-white rounded-3xl w-[650px] p-8 shadow-2xl">
         <div className="grid grid-cols-2 gap-4">
-          <div className="">
+          <div>
             <BaseInputField
               label="Full Name"
               required
@@ -49,8 +47,10 @@ function PersonalInformation() {
             />
           </div>
 
-          <div className="">
-            <PhoneNumberField value={""} onChange={() => {}} />
+          <div >
+            <PhoneNumberField
+              label="secondary number"
+              value={""} onChange={() => { }} />
           </div>
           <div>
             <BaseInputField

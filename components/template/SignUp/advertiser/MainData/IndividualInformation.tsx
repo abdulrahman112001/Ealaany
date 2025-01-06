@@ -16,7 +16,7 @@ function IndividualInformation() {
                 Individual/Corporate Information
             </h2>
 
-            <div className="bg-white rounded-3xl p-8 shadow-2xl">
+            <div className="bg-white rounded-3xl w-[650px] p-8 shadow-2xl">
                 <p className="font-poppins text-base pb-6">About you</p>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="col-span-2">
@@ -44,7 +44,7 @@ function IndividualInformation() {
 
                     <p className="font-poppins text-base mb-[-12px] ms-[5px] col-span-2">if you</p>
 
-                    <div className="col-span-1">
+                    <div className="col-span-1 mb-6">
                         <div
                             onClick={() => setUserType("freelancer")}
                             className={`flex-1 text-center text-sm font-semibold py-[13px] border ${userType === "freelancer"
@@ -55,7 +55,7 @@ function IndividualInformation() {
                             freelancer
                         </div>
                     </div>
-                    <div className="col-span-1">
+                    <div className="col-span-1 mb-6">
                         <div
                             onClick={() => setUserType("corporate")}
                             className={`flex-1 text-center text-sm font-semibold py-[13px] border ${userType === "corporate"

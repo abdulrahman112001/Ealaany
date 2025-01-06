@@ -1,8 +1,12 @@
+import Main from '@/components/template/SignUp/advertiser/Main'
 import LayoutSignUp from '@/components/template/SignUp/LayoutSignUp'
-import React from 'react'
 
 function Advertiser() {
-  return <LayoutSignUp>Advertiser</LayoutSignUp>
+  return (
+    <LayoutSignUp>
+      <Main />
+    </LayoutSignUp>
+  )
 }
 
 export default Advertiser

@@ -10,12 +10,13 @@ function PersonalInformation() {
   return (
     <Container>
       <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
-        Personal Information
+        <h2 className="text-center text-2xl font-extrabold font-poppins ">
+          Personal Information
+        </h2>
       </h2>
-
-      <div className="bg-white rounded-3xl w-[650px] p-8 shadow-2xl">
+      <div className="bg-white rounded-3xl w-[600px] p-8 shadow-2xl">
         <div className="grid grid-cols-2 gap-4">
-          <div>
+          <div className="">
             <BaseInputField
               label="Full Name"
               required
@@ -48,7 +49,7 @@ function PersonalInformation() {
             />
           </div>
 
-          <div >
+          <div className="">
             <PhoneNumberField
               label="phone number"
               required

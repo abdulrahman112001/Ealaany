@@ -52,7 +52,6 @@ function SecurityAndLogicDetails() {
 
         <div className="mb-4">
           <SelectComp
-
             name="contactMethod"
             label="Verify with *"
             placeholder="Select an item"

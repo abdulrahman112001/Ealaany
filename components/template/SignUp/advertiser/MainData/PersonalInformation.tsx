@@ -8,15 +8,15 @@ import Image from "next/image"
 
 function PersonalInformation() {
   return (
-    <div className="mr-10">
+    <div className="md:mr-10">
       <Container>
         <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
           Personal Information
         </h2>
 
-        <div className="bg-white rounded-3xl w-[650px] p-8 shadow-2xl">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
+        <div className="bg-white rounded-3xl max-w-[650px] p-8 shadow-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="col-span-2 md:col-span-1">
               <BaseInputField
                 label="Full Name"
                 required
@@ -33,7 +33,7 @@ function PersonalInformation() {
               />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <BaseInputField
                 label="Your Email"
                 required
@@ -50,14 +50,16 @@ function PersonalInformation() {
               />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <PhoneNumberField
                 label="phone number"
                 required
-                value={""} onChange={() => { }} />
+                value={""}
+                onChange={() => {}}
+              />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <BaseInputField
                 label="User Name"
                 required
@@ -75,7 +77,9 @@ function PersonalInformation() {
             </div>
 
             <div className="col-span-2">
-              <Button action={() => console.log("Submit clicked")}>Submit</Button>
+              <Button action={() => console.log("Submit clicked")}>
+                Submit
+              </Button>
             </div>
           </div>
 

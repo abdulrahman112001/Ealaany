@@ -35,23 +35,22 @@ header {
   width: 100% !important;
 }
 
-
 /* Stepper */
 .mantine-Stepper-stepIcon {
-  border-color: #00CCDC !important;
+  border-color: #00ccdc !important;
 }
 
 .mantine-Stepper-stepBody {
-  padding-top: .7rem;
+  padding-top: 0.7rem;
   color: black;
 }
 
 .mantine-Stepper-step {
-  color: #00CCDC !important;
+  color: #00ccdc !important;
 }
 
 .mantine-Stepper-stepCompletedIcon {
-  background-color: #00CCDC !important;
+  background-color: #00ccdc !important;
   border-radius: 50%;
   width: 8 !important;
   height: 8 !important;
@@ -75,18 +74,18 @@ header {
 
 /* inputs */
 .mantine-Input-input:focus {
-  box-shadow: 0 0 1px 1px #00CCDC !important;
-  border-color: #00CCDC !important;
+  box-shadow: 0 0 1px 1px #00ccdc !important;
+  border-color: #00ccdc !important;
 }
 
 .mantine-PasswordInput-input:focus {
-  box-shadow: 0 0 1px 1px #00CCDC !important;
-  border-color: #00CCDC !important;
+  box-shadow: 0 0 1px 1px #00ccdc !important;
+  border-color: #00ccdc !important;
 }
 
 .m_ccf8da4c:focus-within {
-  box-shadow: 0 0 1px 1px #00CCDC !important;
-  border-color: #00CCDC !important;
+  box-shadow: 0 0 1px 1px #00ccdc !important;
+  border-color: #00ccdc !important;
 }
 
 /* select list  */
@@ -97,13 +96,72 @@ header {
 }
 
 .tabler-icon {
-  color: #72777A !important;
+  color: #72777a !important;
 }
 
 .mantine-Menu-item:hover {
-  background-color: #CCE7EA;
+  background-color: #cce7ea;
 
   .mantine-Menu-itemLabel {
-    color: #00CCDC !important;
+    color: #00ccdc !important;
+  }
+}
+
+.pattern {
+  animation: moving 30s linear infinite;
+}
+.patternY {
+  animation: movingY 30s linear infinite;
+  -webkit-animation: movingY 30s linear infinite;
+}
+
+@keyframes moving {
+  0% {
+    background-position-x: 0px;
+  }
+
+  100% {
+    background-position-x: 2000px;
+  }
+}
+@keyframes movingY {
+  0% {
+    background-position-y: 0px;
+  }
+
+  100% {
+    background-position-y: 2000px;
+  }
+}
+.activeCircle {
+  position: relative;
+}
+
+.activeCircle::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 20px;
+  top: 20px;
+  background-color: #00ccdc;
+  box-shadow: 0 0 10px #00ccdc;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #00ccdc;
+    transform: scale(1.1);
+  }
+  50% {
+    box-shadow: 0 0 20px #00ccdc;
+    transform: scale(1);
+  }
+
+  100% {
+    box-shadow: 0 0 10px #00ccdc;
+    transform: scale(1.1);
   }
 }

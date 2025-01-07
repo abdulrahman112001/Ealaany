@@ -12,10 +12,11 @@ const IndividualCorporateInformation = () => {
   const [contactMethod, setContactMethod] = useState<{ value: string; label: string } | null>(null)
   return (
     <Container>
-      <h2 className="text-center text-2xl mx-auto ps-[85px] font-extrabold font-poppins pb-8">
+      <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
         Individual/Corporate Information
       </h2>
-      <div className="bg-white w-[600px] rounded-3xl p-8 shadow-2xl">
+
+      <div className="bg-white w-[650px] rounded-3xl p-8 shadow-2xl">
         <p className="font-poppins text-base pb-6">About you</p>
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-2">
@@ -44,7 +45,7 @@ const IndividualCorporateInformation = () => {
           <p className="font-poppins text-base mb-[-12px] ms-[5px] col-span-2">if you</p>
 
 
-          <div className="col-span-1">
+          <div className="col-span-1 mb-6">
             <div
               onClick={() => setSelected("individual")}
               className={`flex-1 text-center text-sm font-semibold py-[13px] border ${selected === "individual"
@@ -82,7 +83,7 @@ const IndividualCorporateInformation = () => {
             Submit
           </Button>
           <Button
-            className="w-[200px]"
+            className="w-[200px] mr-0"
             variant="outline"
             action={() => console.log("Skip clicked")}
           >

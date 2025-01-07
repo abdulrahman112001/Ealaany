@@ -51,7 +51,8 @@ function PersonalInformation() {
 
           <div>
             <PhoneNumberField
-              label="secondary phone"
+              label="phone number"
+              required
               value={""} onChange={() => { }} />
           </div>
 

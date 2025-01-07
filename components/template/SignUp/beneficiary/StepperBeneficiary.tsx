@@ -1,22 +1,22 @@
 import { Stepper } from "@mantine/core"
 import { useState } from "react"
+import IndividualCorporateInformation from "./MainData/IndividualCorporateInformation"
 import PersonalInformation from "./MainData/PersonalInformation"
 import SecurityAndLogicDetails from "./MainData/SecurityAndLogicDetails"
-import IndividualCorporateInformation from "./MainData/IndividualCorporateInformation"
 
 function StepperBeneficiary() {
     const [active, setActive] = useState(0)
 
     const getStepIconStyle = (step: number) => ({
-        width: 10,
-        height: 10,
+        width: 14,
+        height: 14,
         backgroundColor: "#00CCDC",
         borderRadius: "50%",
         opacity: active === step ? 1 : 0,
     })
 
     return (
-        <div>
+        <div className="ml-10">
             <Stepper
                 active={active}
                 color="#00CCDC"
@@ -24,10 +24,10 @@ function StepperBeneficiary() {
                 orientation="vertical"
                 styles={{
                     stepIcon: {
-                        width: 25,
-                        height: 25,
-                        minWidth: 25,
-                        minHeight: 25,
+                        width: 40,
+                        height: 40,
+                        minWidth: 40,
+                        minHeight: 40,
                         backgroundColor: "transparent",
                         borderColor: "#606060",
                         borderRadius: "50%",

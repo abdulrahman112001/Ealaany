@@ -80,7 +80,7 @@ export default function Navbar() {
                 + Sign up
               </Button>
             </Link>
-            <a href="#" className="text-[#D83232] text-base font-bold mr-10">
+            <a href="/sign-in" className="text-[#D83232] text-base font-bold mr-10">
               Log in
             </a>
           </Group>

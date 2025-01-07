@@ -3,12 +3,11 @@ import GoogleSignUpButton from "@/components/atoms/buttons/GoogleSignUpButton"
 import LoginLink from "@/components/atoms/buttons/LoginLink"
 import BaseInputField from "@/components/atoms/inputs/BaseInputField"
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField"
-import { Container } from "@mantine/core"
 import Image from "next/image"
 
 function PersonalInformation() {
   return (
-    <Container>
+    <div className="mr-20">
       <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
         Personal Information
       </h2>
@@ -49,7 +48,8 @@ function PersonalInformation() {
 
           <div >
             <PhoneNumberField
-              label="secondary number"
+              label="phone number"
+              required
               value={""} onChange={() => { }} />
           </div>
           <div>
@@ -79,7 +79,7 @@ function PersonalInformation() {
         <GoogleSignUpButton />
         <LoginLink />
       </div>
-    </Container>
+    </div>
   )
 }
 

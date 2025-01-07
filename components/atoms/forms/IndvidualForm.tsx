@@ -1,57 +1,62 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
+import { NativeSelect } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
-import { useState } from "react";
-import SelectComp from "../Select/SelectComp";
 
 function IndvidualForm() {
-    const [contactMethod, setContactMethod] = useState<{ value: string; label: string } | null>(null)
 
     return (
         <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2">
-                <label className='text-sm text-[#979C9E] font-[400]'>national ID type *</label>
-                <SelectComp
-                    name="contactMethod"
-                    label="Verify with *"
-                    placeholder="Select an item"
-                    value={contactMethod}
-                    onChange={(value) => setContactMethod(value as { value: string; label: string })}
-                    required={true}
-                    options={[
-                        { value: "sms", label: "SMS" },
-                        { value: "whatsapp", label: "WhatsApp" },
-                        { value: "email", label: "Email" },
+                <NativeSelect
+                    label="national ID Type"
+                    required
+                    value={""}
+                    // onChange={(event) => setValue(event.currentTarget.value)}
+                    leftSection={
+                        <Image src="/images/id.png" alt="national ID Type" width={20} height={20} />
+                    }
+                    data={[
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "test1", label: "test1" },
+                        { value: "test2", label: "test2" },
+
                     ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
                 />
             </div>
-            <div className="col-span-1">
+
+            <div>
                 <BaseInputField
-                    label="national ID number *"
+                    label="national ID number"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/profile.png" alt="fax" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
+                    name="nationalIDNumber"
                 />
             </div>
 
-            <div className="col-span-1">
-                <div className="flex-1">
-                    <DatePickerInput
-                        label="Occupation"
-                        placeholder="name"
-                        leftSection={
-                            <Image
-                                src="/images/calendar-empty.png"
-                                alt="date"
-                                width={20}
-                                height={20}
-                            />
-                        }
-                    />
-                </div>
+            <div >
+                <DatePickerInput
+                    label="Occupation"
+                    placeholder="name"
+                    leftSection={
+                        <Image
+                            src="/images/calendar-empty.png"
+                            alt="date"
+                            width={20}
+                            height={20}
+                        />
+                    }
+                />
+
             </div>
+
             <div className="col-span-2">
                 <div className="flex-1">
                     <DatePickerInput
@@ -71,12 +76,13 @@ function IndvidualForm() {
 
             <div className="col-span-2">
                 <BaseInputField
-                    label="primary address *"
+                    label="primary address"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/bag.png" alt="fax" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
+                    name="primaryAddress"
                 />
             </div>
             <div className="col-span-2">

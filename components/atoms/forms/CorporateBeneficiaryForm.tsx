@@ -1,173 +1,212 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
+import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
+import { NativeSelect } from "@mantine/core";
+import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
-import { useState } from "react";
-import SelectComp from "../Select/SelectComp";
 
 function CorporateBeneficiaryForm() {
-    const [contactMethod, setContactMethod] = useState<{ value: string; label: string } | null>(null)
 
     return (
         <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2">
                 <BaseInputField
-                    label="Corporate Name *"
+                    label="Corporate Name"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/corporate.png" alt="fax" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
+                    name="corporateName"
                 />
             </div>
 
-            <div className="col-span-1">
-                <label className='text-sm text-[#979C9E] font-[400] '>Corporate Country *</label>
-                <SelectComp
-                    name="contactMethod"
-                    label="corporate country *"
-                    placeholder="Select a country"
-                    value={contactMethod}
-                    onChange={(value) => setContactMethod(value as { value: string; label: string })}
-                    required={true}
-                    options={[
-                        { value: "Country 1", label: "Country 1" },
-                        { value: "Country 2", label: "Country 2" },
-                    ]}
+            <div>
+                <FlagsForm
+                    label="corporate country"
+                    required
                 />
             </div>
 
-            <div className="col-span-1">
-                <label className='text-sm text-[#979C9E] font-[400]'>Corporate City *</label>
-                <SelectComp
-                    name="corporate country"
-                    label="corporate country*"
-                    placeholder="Select a city"
-                    value={contactMethod}
-                    onChange={(value) => setContactMethod(value as { value: string; label: string })}
-                    required={true}
-                    options={[
-                        { value: "City 1", label: "City 1" },
-                        { value: "City 2", label: "City 2" },
-                    ]}
-                />
-            </div>
-
-            <div className="col-span-1">
-                <BaseInputField
-                    label="Corporate License Number *"
-                    placeholder="name"
+            <div>
+                <NativeSelect
+                    label="corporate city"
+                    required
+                    value={""}
+                    // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
-                        <Image src="/images/license.png" alt="fax" width={20} height={20} />
+                        <Image src="/images/id.png" alt="city" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
-                />
-            </div>
-
-            <div className="col-span-1">
-                <label className='text-sm text-[#979C9E] font-[400]'>Corporate Type </label>
-                <SelectComp
-                    name="corporate country"
-                    label="corporate Type*"
-                    placeholder="selection item"
-                    value={contactMethod}
-                    onChange={(value) => setContactMethod(value as { value: string; label: string })}
-                    required={true}
-                    options={[
-                        { value: "Type 1", label: "Type1" },
-                        { value: "Type 2", label: "Type 2" },
-                        { value: "Type 3", label: "Type 3" },
+                    data={[
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "Cairo", label: "Cairo" },
+                        { value: "Riyadh", label: "Riyadh" },
+                        { value: "Gada", label: "Gada" },
+                        { value: "Alex", label: "Alex" },
                     ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
                 />
             </div>
 
-            <div className="col-span-1">
+
+            <div >
                 <BaseInputField
-                    label="Corporate License Number *"
+                    label="Corporate License Number"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/license-line.png" alt="fax" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
+                    name="licenseNumber"
                 />
             </div>
-            <div className="col-span-1">
+
+            <div>
+                <NativeSelect
+                    label="Corporate Type"
+                    required
+                    value={""}
+                    // onChange={(event) => setValue(event.currentTarget.value)}
+                    leftSection={
+                        <Image src="/images/id.png" alt="city" width={20} height={20} />
+                    }
+                    data={[
+
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "Type 1", label: "Type1" },
+                        { value: "Type 2", label: "Type 2" },
+                        { value: "Type 3", label: "Type 3" },
+
+                    ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
+                />
+            </div>
+
+
+
+            <div >
+                <DatePickerInput
+                    label="Corporate License Expiry Date *"
+                    placeholder="date"
+                    leftSection={
+                        <Image
+                            src="/images/calendar-empty.png"
+                            alt="date"
+                            width={20}
+                            height={20}
+                        />
+                    }
+                />
+            </div>
+
+            <div>
                 <BaseInputField
                     label="Main Office Address"
                     placeholder="name"
+
                     leftSection={
                         <Image src="/images/bag.png" alt="fax" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
+                    name="mainAddress"
                 />
             </div>
 
             <div className="col-span-2">
-                <label className='text-sm text-[#979C9E] font-[400]'>industruy *  </label>
-                <SelectComp
-                    name="industruy"
-                    label="industruy*"
-                    placeholder="selection item"
-                    value={contactMethod}
-                    onChange={(value) => setContactMethod(value as { value: string; label: string })}
-                    required={true}
-                    options={[
-                        { value: "industry", label: "industry" },
-                    ]}
-                />
-            </div>
-
-            <div className="col-span-2">
-                <BaseInputField
-                    label="Manager Name *"
-                    placeholder="name"
+                <NativeSelect
+                    label="industruy"
+                    required
+                    value={""}
+                    // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
-                        <Image src="/images/bag.png" alt="fax" width={20} height={20} />
+                        <Image src="/images/profile.png" alt="industry" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
-                />
-            </div>
+                    data={[
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "industry1", label: "industry1" },
+                        { value: "industry2", label: "industry2" },
 
-            <div className="col-span-1">
-                <label className='text-sm text-[#979C9E] font-[400]'>Manager ID Type *  </label>
-                <SelectComp
-                    name="managerID"
-                    label="Manager ID Type * "
-                    placeholder="selection item"
-                    value={contactMethod}
-                    onChange={(value) => setContactMethod(value as { value: string; label: string })}
-                    required={true}
-                    options={[
-                        { value: "1", label: "National ID" },
-                        { value: "2", label: "Iqama" },
                     ]}
-                />
-            </div>
-
-
-            <div className="col-span-1">
-                <label className='text-sm text-[#979C9E] font-[400]'>Manager ID Number *  </label>
-                <SelectComp
-                    name="managerNumber"
-                    label="Manager ID Number *"
-                    placeholder="selection item"
-                    value={contactMethod}
-                    onChange={(value) => setContactMethod(value as { value: string; label: string })}
-                    required={true}
-                    options={[
-                        { value: "type1", label: "Number 1" },
-                    ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
                 />
             </div>
 
             <div className="col-span-2">
                 <BaseInputField
-                    label="primary address *"
+                    label="Manager Name"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/bag.png" alt="fax" width={20} height={20} />
                     }
-                    name="mainOfficeFax"
+                    name="managerName"
                 />
             </div>
+
+            <div>
+                <NativeSelect
+                    label="Manager ID Type"
+                    required
+                    value={""}
+                    // onChange={(event) => setValue(event.currentTarget.value)}
+                    leftSection={
+                        <Image src="/images/profile.png" alt="industry" width={20} height={20} />
+                    }
+                    data={[
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "National ID", label: "National ID" },
+                        { value: "Iqama", label: "Iqama" },
+
+                    ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
+                />
+            </div>
+
+            <div>
+                <NativeSelect
+                    label="Manager ID Number"
+                    required
+                    value={""}
+                    // onChange={(event) => setValue(event.currentTarget.value)}
+                    leftSection={
+                        <Image src="/images/profile.png" alt="industry" width={20} height={20} />
+                    }
+                    data={[
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "test1", label: "test1" },
+                        { value: "test2", label: "test2" },
+
+                    ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
+                />
+            </div>
+
+
+            <div className="col-span-2">
+                <BaseInputField
+                    label="primary address"
+                    required
+                    placeholder="name"
+                    leftSection={
+                        <Image src="/images/bag.png" alt="fax" width={20} height={20} />
+                    }
+                    name="primaryAddress"
+                />
+            </div>
+
             <div className="col-span-2">
                 <BaseInputField
                     label="fax number"

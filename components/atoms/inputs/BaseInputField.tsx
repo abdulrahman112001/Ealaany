@@ -1,5 +1,4 @@
 import { TextInput } from "@mantine/core"
-import { useFormikContext } from "formik"
 import React from "react"
 import { Label } from "../Label"
 
@@ -22,7 +21,7 @@ function BaseInputField({
   inputMode,
   required,
 }: BaseInputFieldProps) {
-  const { values, setFieldValue } = useFormikContext()
+  // const { values, setFieldValue } = useFormikContext()
   return (
     <div>
       <Label htmlFor="name">
@@ -42,7 +41,7 @@ function BaseInputField({
         maxLength={maxLength}
         className="flex-1"
         inputMode={inputMode}
-        onChange={(event) => setFieldValue(name, event.currentTarget.value)}
+      // onChange={(event) => setFieldValue(name, event.currentTarget.value)}
       />
     </div>
   )

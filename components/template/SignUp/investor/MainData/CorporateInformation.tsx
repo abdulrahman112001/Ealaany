@@ -1,8 +1,9 @@
 import { Button } from "@/components/atoms/buttons/Button"
 
 import BaseInputField from "@/components/atoms/inputs/BaseInputField"
-import DatePickerInput from "@/components/atoms/inputs/DatePickerInput"
+import DatePicker2 from "@/components/atoms/inputs/DatePicker2"
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField"
+import { FlagsForm } from "@/components/molecules/Selects/FlagsForm"
 import { Container, NativeSelect } from "@mantine/core"
 import Image from "next/image"
 
@@ -60,24 +61,9 @@ function CorporateInformation() {
           </div>
 
           <div>
-            <NativeSelect
+            <FlagsForm
               label="corporate country"
-              value={"value"}
               required
-              // onChange={(event) => setValue(event.currentTarget.value)}
-              leftSection={
-                <Image src="/images/id.png" alt="city" width={20} height={20} />
-              }
-              data={[
-                { value: "", label: "Selection item", disabled: true },
-                { value: "Egypt", label: "Egypt" },
-                { value: "Saudia", label: "Saudia" },
-                { value: "USA", label: "USA" },
-              ]}
-              labelProps={{
-                className:
-                  "text-[14px] text-[#979C9E] font-poppins font-semibold",
-              }}
             />
           </div>
 
@@ -85,7 +71,7 @@ function CorporateInformation() {
             <NativeSelect
               label="corporate city"
               required
-              value={"value"}
+              value={""}
               // onChange={(event) => setValue(event.currentTarget.value)}
               leftSection={
                 <Image src="/images/id.png" alt="city" width={20} height={20} />
@@ -140,24 +126,25 @@ function CorporateInformation() {
             />
           </div>
           <div>
-            <DatePickerInput
-              label="corporate license date  *"
-              placeholder="date"
-              leftSection={
-                <Image
-                  src="/images/calendar-empty.png"
-                  alt="date"
-                  width={20}
-                  height={20}
-                />
-              }
+            <DatePicker2
+            // label="corporate license date  *"
+            // placeholder="date"
+            // leftSection={
+            //   <Image
+            //     src="/images/calendar-empty.png"
+            //     alt="date"
+            //     width={20}
+            //     height={20}
+            //   />
+            // }
             />
           </div>
 
           <div>
             <NativeSelect
               label="corporate status"
-              //   value={value}
+
+              value={""}
               //   onChange={(event) => setValue(event.currentTarget.value)}
               leftSection={
                 <Image
@@ -182,7 +169,7 @@ function CorporateInformation() {
           <div >
             <NativeSelect
               label="corporate type"
-              //   value={value}
+              value={""}
               //   onChange={(event) => setValue(event.currentTarget.value)}
               leftSection={
                 <Image
@@ -237,7 +224,7 @@ function CorporateInformation() {
               Submit
             </Button>
             <Button
-              className="w-[200px] "
+              className="w-[200px] mr-0"
               variant="outline"
               action={() => console.log("Skip clicked")}
             >

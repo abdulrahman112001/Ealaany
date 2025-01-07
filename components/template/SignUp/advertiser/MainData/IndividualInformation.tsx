@@ -77,7 +77,7 @@ function IndividualInformation() {
                         Submit
                     </Button>
                     <Button
-                        className="w-[200px] "
+                        className="w-[200px] mr-0"
                         variant="outline"
                         action={() => console.log("Skip clicked")}
                     >

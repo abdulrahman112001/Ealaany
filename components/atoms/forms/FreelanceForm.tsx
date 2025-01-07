@@ -1,4 +1,5 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
+import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
 import { NativeSelect } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
@@ -10,7 +11,7 @@ function FreelanceForm() {
                 <NativeSelect
                     label="industry"
                     required
-                    value={"value"}
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/profile.png" alt="industry" width={20} height={20} />
@@ -30,24 +31,9 @@ function FreelanceForm() {
             </div>
 
             <div>
-                <NativeSelect
+                <FlagsForm
                     label="freelancer country"
-                    value={"value"}
                     required
-                    // onChange={(event) => setValue(event.currentTarget.value)}
-                    leftSection={
-                        <Image src="/images/id.png" alt="city" width={20} height={20} />
-                    }
-                    data={[
-                        { value: "", label: "Selection item", disabled: true },
-                        { value: "Egypt", label: "Egypt" },
-                        { value: "Saudia", label: "Saudia" },
-                        { value: "USA", label: "USA" },
-                    ]}
-                    labelProps={{
-                        className:
-                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
-                    }}
                 />
             </div>
 
@@ -55,7 +41,7 @@ function FreelanceForm() {
                 <NativeSelect
                     label="freelancer city"
                     required
-                    value={"value"}
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/id.png" alt="city" width={20} height={20} />

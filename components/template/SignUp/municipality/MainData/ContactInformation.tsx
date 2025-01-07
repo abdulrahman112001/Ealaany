@@ -1,6 +1,7 @@
 import { Button } from "@/components/atoms/buttons/Button";
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField";
+import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
 import { Container, NativeSelect } from "@mantine/core";
 import Image from "next/image";
 
@@ -59,24 +60,9 @@ function ContactInformation() {
                     </div>
 
                     <div>
-                        <NativeSelect
+                        <FlagsForm
                             label="municipality country"
-                            value={"value"}
                             required
-                            // onChange={(event) => setValue(event.currentTarget.value)}
-                            leftSection={
-                                <Image src="/images/id.png" alt="city" width={20} height={20} />
-                            }
-                            data={[
-                                { value: "", label: "Selection item", disabled: true },
-                                { value: "Egypt", label: "Egypt" },
-                                { value: "Saudia", label: "Saudia" },
-                                { value: "USA", label: "USA" },
-                            ]}
-                            labelProps={{
-                                className:
-                                    "text-[14px] text-[#979C9E] font-poppins font-semibold",
-                            }}
                         />
                     </div>
 
@@ -84,7 +70,7 @@ function ContactInformation() {
                         <NativeSelect
                             label="municipality city"
                             required
-                            value={"value"}
+                            value={""}
                             // onChange={(event) => setValue(event.currentTarget.value)}
                             leftSection={
                                 <Image src="/images/id.png" alt="city" width={20} height={20} />
@@ -164,7 +150,7 @@ function ContactInformation() {
                             Submit
                         </Button>
                         <Button
-                            className="w-[200px] "
+                            className="w-[200px] mr-0"
                             variant="outline"
                             action={() => console.log("Skip clicked")}
                         >

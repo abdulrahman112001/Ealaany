@@ -1,17 +1,14 @@
 import { Button } from "@/components/atoms/buttons/Button"
-import GoogleSignUpButton from "@/components/atoms/buttons/GoogleSignUpButton"
-import LoginLink from "@/components/atoms/buttons/LoginLink"
 import BaseInputField from "@/components/atoms/inputs/BaseInputField"
 import DatePickerInput from "@/components/atoms/inputs/DatePickerInput"
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField"
 import SelectCountry from "@/components/molecules/Selects/SelectCountry"
-import { Container, Group, NativeSelect } from "@mantine/core"
+import { Container, NativeSelect } from "@mantine/core"
 import Image from "next/image"
-import React from "react"
 
 function CorporateInformation() {
   return (
-    <Container size="">
+    <Container >
       <h2 className="text-center text-2xl mx-auto ps-[85px] font-extrabold font-poppins pb-8">
         corporate Information
       </h2>
@@ -34,7 +31,7 @@ function CorporateInformation() {
             />
           </div>
           <div className="col-span-2 mb-10">
-            <PhoneNumberField onChange={() => {}} value="" />
+            <PhoneNumberField onChange={() => { }} value="" />
           </div>
           <p className="font-poppins text-base pb-6 col-span-2">
             About corporate

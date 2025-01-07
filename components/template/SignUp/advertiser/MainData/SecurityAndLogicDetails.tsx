@@ -21,7 +21,7 @@ function SecurityAndLogicDetails() {
         </h2>
       </h2>
       <div className="bg-white rounded-3xl w-[600px] p-8 shadow-2xl">
-        <div className="flex space-x-4 mb-4">
+        <div className="grid grid-cols-2 space-x-4 mb-4">
           <BaseInputField
             label="Password *"
             placeholder="Your password"
@@ -52,6 +52,7 @@ function SecurityAndLogicDetails() {
 
         <div className="mb-4">
           <SelectComp
+
             name="contactMethod"
             label="Verify with *"
             placeholder="Select an item"

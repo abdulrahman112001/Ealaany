@@ -6,7 +6,7 @@ function SelectCountry() {
     <div>
       <SelectComp
         name="country"
-        onChange={() => {}}
+        onChange={() => { }}
         options={[
           { label: "Saudi Arabia", value: "sa" },
           { label: "United Arab Emirates", value: "ae" },
@@ -14,6 +14,7 @@ function SelectCountry() {
         ]}
         placeholder="Select country"
         value={null}
+
       />
     </div>
   )

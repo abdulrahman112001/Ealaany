@@ -1,8 +1,8 @@
 import { Stepper } from "@mantine/core"
 import { useState } from "react"
+import CorporateInformation from "./MainData/CorporateInformation"
 import PersonalInformation from "./MainData/PersonalInformation"
 import SecurityAndLogicDetails from "./MainData/SecurityAndLogicDetails"
-import CorporateInformation from "./MainData/CorporateInformation"
 
 function StepperInvestor() {
   const [active, setActive] = useState(0)
@@ -81,7 +81,7 @@ function StepperInvestor() {
             minHeight: 60,
           }}
           icon={<div style={getStepIconStyle(2)} />}
-          label="Contact Information"
+          label="Corporate information"
         >
           <CorporateInformation />
         </Stepper.Step>

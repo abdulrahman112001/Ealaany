@@ -1,8 +1,12 @@
 import LayoutSignUp from "@/components/template/SignUp/LayoutSignUp"
-import React from "react"
+import Main from "@/components/template/SignUp/municipality/Main"
 
 function Municipality() {
-  return <LayoutSignUp>Municipality</LayoutSignUp>
+  return (
+    <LayoutSignUp>
+      <Main />
+    </LayoutSignUp>
+  )
 }
 
 export default Municipality

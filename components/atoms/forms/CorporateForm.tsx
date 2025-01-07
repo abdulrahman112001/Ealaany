@@ -1,8 +1,8 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
 import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
 import { NativeSelect } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
+import DateCalender from "../inputs/DatePicker";
 
 function CorporateForm() {
     return (
@@ -106,17 +106,9 @@ function CorporateForm() {
             </div>
 
             <div >
-                <DatePickerInput
-                    label="freelancer license Expiry date  *"
-                    placeholder="date"
-                    leftSection={
-                        <Image
-                            src="/images/calendar-empty.png"
-                            alt="date"
-                            width={20}
-                            height={20}
-                        />
-                    }
+                <DateCalender
+                    textlabel="Corporate License Expiry Date"
+
                 />
             </div>
 

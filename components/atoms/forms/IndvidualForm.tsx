@@ -1,7 +1,7 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
 import { NativeSelect } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
+import DateCalender from "../inputs/DatePicker";
 
 function IndvidualForm() {
 
@@ -42,36 +42,17 @@ function IndvidualForm() {
             </div>
 
             <div >
-                <DatePickerInput
-                    label="Occupation"
-                    placeholder="name"
-                    leftSection={
-                        <Image
-                            src="/images/calendar-empty.png"
-                            alt="date"
-                            width={20}
-                            height={20}
-                        />
-                    }
+                <DateCalender
+                    textlabel="Occupation"
                 />
 
             </div>
 
-            <div className="col-span-2">
-                <div className="flex-1">
-                    <DatePickerInput
-                        label="Date of Barth"
-                        placeholder="name"
-                        leftSection={
-                            <Image
-                                src="/images/calendar-empty.png"
-                                alt="date"
-                                width={20}
-                                height={20}
-                            />
-                        }
-                    />
-                </div>
+            <div >
+                <DateCalender
+                    textlabel="Date of Barth"
+
+                />
             </div>
 
             <div className="col-span-2">
@@ -80,7 +61,7 @@ function IndvidualForm() {
                     required
                     placeholder="name"
                     leftSection={
-                        <Image src="/images/bag.png" alt="fax" width={20} height={20} />
+                        <Image src="/images/bag.png" alt="address" width={20} height={20} />
                     }
                     name="primaryAddress"
                 />

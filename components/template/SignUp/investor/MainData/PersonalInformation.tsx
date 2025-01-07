@@ -7,7 +7,7 @@ import Image from "next/image"
 
 function PersonalInformation() {
   return (
-    <div className="mr-20">
+    <div className="mr-10">
       <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
         Personal Information
       </h2>

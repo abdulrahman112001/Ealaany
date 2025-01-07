@@ -4,11 +4,12 @@ import SignLink from "@/components/atoms/buttons/SignLink";
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
 import { Container } from "@mantine/core";
 import Image from "next/image";
+import Link from "next/link";
 
 function SignInForm() {
     return (
         <div className="flex h-screen">
-            <div className="w-3/4 flex justify-center items-center bg-gray-100">
+            <div className="w-3/4 flex justify-center items-start  bg-gray-100">
                 <Container>
                     <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
                         Sign In
@@ -51,9 +52,9 @@ function SignInForm() {
                             </div>
 
                             <div>
-                                <a href="/sign-in/forget-password" className="underline text-[#979C9E] text-sm font-poppins">
+                                <Link href="/sign-in/forget-password" className="underline text-[#979C9E] text-sm font-poppins">
                                     forget your password
-                                </a>
+                                </Link>
                             </div>
 
                             <div className="col-span-2">
@@ -70,12 +71,12 @@ function SignInForm() {
                 </Container>
             </div>
 
-            <div className="w-1/4 relative">
+            <div className="w-1/4 relative  mt-[-100px] z-0" >
                 <Image
                     src="/images/login.png"
                     alt="Sign in background"
-                    width={480}
-                    height={1024}
+                    layout="fill"
+                    objectFit="cover"
                 />
             </div>
         </div>

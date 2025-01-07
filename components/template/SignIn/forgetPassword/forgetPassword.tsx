@@ -5,8 +5,8 @@ import Image from "next/image";
 
 function ForgetPassword() {
     return (
-        <div className="flex h-screen">
-            <div className="w-1/2 flex justify-center items-center bg-gray-100">
+        <div className="flex h-[80vh]">
+            <div className="w-3/4 flex justify-center items-start  bg-gray-100 mt-16">
                 <Container>
                     <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
                         Forget your password
@@ -48,28 +48,20 @@ function ForgetPassword() {
                                 />
                             </div>
 
-                            <div>
-                                <a href="#" className="underline text-[#979C9E] text-sm font-poppins">
-                                    forget your password
-                                </a>
-                            </div>
-
                             <div className="col-span-2">
-                                <Button action={() => console.log("Sign clicked")}>Sign In</Button>
+                                <Button action={() => console.log("Sign clicked")}>Reset</Button>
                             </div>
                         </div>
-
-
                     </div>
                 </Container>
             </div>
 
-            <div className="w-1/2 relative">
+            <div className="w-1/4 relative  mt-[-98px] z-0">
                 <Image
                     src="/images/login.png"
                     alt="Sign in background"
-                    width={480}
-                    height={1024}
+                    layout="fill"
+                    objectFit="cover"
                 />
             </div>
         </div>

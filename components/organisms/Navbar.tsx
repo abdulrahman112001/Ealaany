@@ -22,8 +22,8 @@ export default function Navbar() {
   const theme = useMantineTheme()
 
   return (
-    <Box pb={40}>
-      <header className={classes.header}>
+    <Box pb={40} >
+      <header className={`${classes.header} z-50 relative `} >
         <Group justify="space-between" h="100%">
           <Image
             src="/images/logo.png"
@@ -80,9 +80,10 @@ export default function Navbar() {
                 + Sign up
               </Button>
             </Link>
-            <a href="#" className="text-[#D83232] text-base font-bold mr-10">
-              Log in
-            </a>
+            <Link href="/sign-in" className="text-[#D83232] text-base font-bold mr-10">
+              log in
+            </Link>
+
           </Group>
 
           <Burger

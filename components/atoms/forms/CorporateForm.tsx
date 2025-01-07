@@ -1,15 +1,16 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
-import SelectCountry from "@/components/molecules/Selects/SelectCountry";
+import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
 import { NativeSelect } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
+import DateCalender from "../inputs/DatePicker";
 
 function CorporateForm() {
     return (
         <div className="grid grid-cols-2 gap-4">
-            <div className="col-span-1">
+            <div >
                 <BaseInputField
-                    label="Corporate Name *"
+                    label="Corporate Name"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image
@@ -23,34 +24,25 @@ function CorporateForm() {
                 />
             </div>
 
-            <div className="col-span-1">
-                <div className="flex-1">
-                    <label
-                        htmlFor="country-select"
-                        className="text-[14px] text-[#979C9E] font-poppins "
-                    >
-                        corporate country/city *
-                    </label>
-                    <SelectCountry />
-                </div>
+            <div>
+                <FlagsForm
+                    label="corporate country/city"
+                    required
+                />
             </div>
 
-            <div className="col-span-1">
-                <div className="flex-1">
-                    <label
-                        htmlFor="country-select"
-                        className="text-[14px] text-[#979C9E] font-poppins "
-                    >
-                        corporate country *
-                    </label>
-                    <SelectCountry />
-                </div>
+            <div>
+                <FlagsForm
+                    label="corporate country"
+                    required
+                />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <NativeSelect
-                    label="corporate city *"
-                    value={"value"}
+                    label="corporate city"
+                    required
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/id.png" alt="city" width={20} height={20} />
@@ -66,13 +58,13 @@ function CorporateForm() {
                         className:
                             "text-[14px] text-[#979C9E] font-poppins font-semibold",
                     }}
-                    className="flex-1"
                 />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <BaseInputField
-                    label="corporate license number *"
+                    label="corporate license number"
+                    required
                     placeholder="123456"
                     leftSection={
                         <Image
@@ -86,14 +78,12 @@ function CorporateForm() {
                     maxLength={6}
                     inputMode="numeric"
                 />
-
-
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <NativeSelect
                     label="corporate type"
-                    //   value={value}
+                    value={""}
                     //   onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image
@@ -112,26 +102,17 @@ function CorporateForm() {
                         className:
                             "text-[14px] text-[#979C9E] font-poppins font-semibold",
                     }}
-                    className="flex-1"
                 />
             </div>
 
-            <div className="col-span-1">
-                <DatePickerInput
-                    label="freelancer license Expiry date  *"
-                    placeholder="date"
-                    leftSection={
-                        <Image
-                            src="/images/calendar-empty.png"
-                            alt="date"
-                            width={20}
-                            height={20}
-                        />
-                    }
+            <div >
+                <DateCalender
+                    textlabel="Corporate License Expiry Date"
+
                 />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <BaseInputField
                     label="main office address"
                     placeholder="name"
@@ -149,8 +130,9 @@ function CorporateForm() {
 
             <div className="col-span-2">
                 <NativeSelect
-                    label="industry *"
-                    value={"value"}
+                    label="industry"
+                    required
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/profile.png" alt="industry" width={20} height={20} />
@@ -165,13 +147,13 @@ function CorporateForm() {
                         className:
                             "text-[14px] text-[#979C9E] font-poppins font-semibold",
                     }}
-                    className="flex-1"
                 />
             </div>
 
             <div className="col-span-2">
                 <BaseInputField
                     label="Manager Name"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/profile.png" alt="profile" width={20} height={20} />
@@ -180,10 +162,11 @@ function CorporateForm() {
                 />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <NativeSelect
-                    label="Manager ID Type *"
-                    value={"value"}
+                    label="Manager ID Type"
+                    required
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/profile.png" alt="industry" width={20} height={20} />
@@ -198,14 +181,14 @@ function CorporateForm() {
                         className:
                             "text-[14px] text-[#979C9E] font-poppins font-semibold",
                     }}
-                    className="flex-1"
                 />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <NativeSelect
-                    label="Manager ID Number *"
-                    value={"value"}
+                    label="Manager ID Number"
+                    required
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/profile.png" alt="industry" width={20} height={20} />
@@ -220,7 +203,6 @@ function CorporateForm() {
                         className:
                             "text-[14px] text-[#979C9E] font-poppins font-semibold",
                     }}
-                    className="flex-1"
                 />
             </div>
 

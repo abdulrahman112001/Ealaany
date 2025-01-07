@@ -1,16 +1,17 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
-import SelectCountry from "@/components/molecules/Selects/SelectCountry";
+import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
 import { NativeSelect } from "@mantine/core";
-import { DatePickerInput } from "@mantine/dates";
 import Image from "next/image";
+import DateCalender from "../inputs/DatePicker";
 
 function FreelanceForm() {
     return (
         <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2">
                 <NativeSelect
-                    label="industry *"
-                    value={"value"}
+                    label="industry"
+                    required
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/profile.png" alt="industry" width={20} height={20} />
@@ -29,22 +30,18 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div className="col-span-1">
-                <div className="flex-1">
-                    <label
-                        htmlFor="country-select"
-                        className="text-[14px] text-[#979C9E] font-poppins "
-                    >
-                        corporate country *
-                    </label>
-                    <SelectCountry />
-                </div>
+            <div>
+                <FlagsForm
+                    label="freelancer country"
+                    required
+                />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <NativeSelect
-                    label="corporate city *"
-                    value={"value"}
+                    label="freelancer city"
+                    required
+                    value={""}
                     // onChange={(event) => setValue(event.currentTarget.value)}
                     leftSection={
                         <Image src="/images/id.png" alt="city" width={20} height={20} />
@@ -64,9 +61,10 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div className="col-span-1">
+            <div>
                 <BaseInputField
-                    label="corporate license number *"
+                    label="corporate license number"
+                    required
                     placeholder="123456"
                     leftSection={
                         <Image
@@ -84,9 +82,10 @@ function FreelanceForm() {
 
             </div>
 
-            <div className="col-span-1">
+            <div >
                 <BaseInputField
                     label="occupation"
+                    required
                     placeholder="name"
                     leftSection={
                         <Image src="/images/license-line.png" alt="occupation" width={20} height={20} />
@@ -95,32 +94,16 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div className="col-span-1">
-                <DatePickerInput
-                    label="freelancer license Expiry date  *"
-                    placeholder="date"
-                    leftSection={
-                        <Image
-                            src="/images/calendar-empty.png"
-                            alt="date"
-                            width={20}
-                            height={20}
-                        />
-                    }
+            <div>
+                <DateCalender
+                    textlabel="freelancer license Expiry date"
+                    required
                 />
             </div>
-            <div className="col-span-1">
-                <DatePickerInput
-                    label="date of birth"
-                    placeholder="date"
-                    leftSection={
-                        <Image
-                            src="/images/calendar-empty.png"
-                            alt="date"
-                            width={20}
-                            height={20}
-                        />
-                    }
+
+            <div >
+                <DateCalender
+                    textlabel="date of birth"
                 />
             </div>
 

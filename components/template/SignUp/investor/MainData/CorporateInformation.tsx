@@ -1,21 +1,20 @@
 import { Button } from "@/components/atoms/buttons/Button"
 import BaseInputField from "@/components/atoms/inputs/BaseInputField"
-import DateCalender from "@/components/atoms/inputs/DatePicker"
+import DatePickerInput from "@/components/atoms/inputs/DatePicker"
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField"
-import { FlagsForm } from "@/components/molecules/Selects/FlagsForm"
 import { Container, NativeSelect } from "@mantine/core"
 import Image from "next/image"
 
 function CorporateInformation() {
   return (
-    <div className="mr-10">
+    <div className="md:mr-10">
       <Container >
         <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
           corporate Information
         </h2>
-        <div className="bg-white rounded-3xl w-[650px] p-8 shadow-2xl">
+        <div className="bg-white rounded-3xl max-w-[650px] p-8 shadow-2xl">
           <p className="font-poppins text-base pb-6">About you</p>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2">
               <BaseInputField
                 label="nick Name"
@@ -60,14 +59,30 @@ function CorporateInformation() {
               />
             </div>
 
-            <div>
-              <FlagsForm
+            <div className="col-span-2 md:col-span-1">
+              <NativeSelect
                 label="corporate country"
                 required
+                value={""}
+                // onChange={(event) => setValue(event.currentTarget.value)}
+                leftSection={
+                  <Image src="/images/flag.png" alt="country" width={20} height={20} />
+                }
+                data={[
+                  { value: "", label: "Selection item", disabled: true },
+                  { value: "Saudia", label: "Saudia" },
+                  { value: "Egypt", label: "Egypt" },
+
+                ]}
+                labelProps={{
+                  className:
+                    "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                }}
+                className="flex-1"
               />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <NativeSelect
                 label="corporate city"
                 required
@@ -107,7 +122,7 @@ function CorporateInformation() {
               />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <BaseInputField
                 label="corporate license number"
                 required
@@ -125,18 +140,18 @@ function CorporateInformation() {
                 inputMode="numeric"
               />
             </div>
-            <div>
-              <DateCalender
-                textlabel="corporate license date"
-                required
 
+            <div className="col-span-2 md:col-span-1">
+              <DatePickerInput
+                label="corporate license date"
+                placeholder="date"
+                required
               />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <NativeSelect
                 label="corporate status"
-
                 value={""}
                 //   onChange={(event) => setValue(event.currentTarget.value)}
                 leftSection={
@@ -159,7 +174,7 @@ function CorporateInformation() {
               />
             </div>
 
-            <div >
+            <div className="col-span-2 md:col-span-1">
               <NativeSelect
                 label="corporate type"
                 value={""}

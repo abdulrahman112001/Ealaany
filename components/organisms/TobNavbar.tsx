@@ -4,7 +4,7 @@ import React from "react"
 function TobNavbar() {
   return (
     <div className="bg-[#F4F0E7] p-4">
-      <div className="flex items-center justify-between ml-20">
+      <div className="flex items-center justify-between md:ml-20">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <Image
@@ -29,7 +29,7 @@ function TobNavbar() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-2 mr-20">
+        <div className="flex items-center space-x-2 md:mr-20">
           <Image
             src="/images/uk-flag.png"
             alt="Language"

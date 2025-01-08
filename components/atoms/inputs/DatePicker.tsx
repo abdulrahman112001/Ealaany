@@ -1,46 +1,49 @@
-import TextField from "@mui/material/TextField";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { Dayjs } from "dayjs";
-import { useState } from "react";
-import { Label } from "../Label";
+import "@mantine/dates/styles.css"
+import React, { useState } from "react"
 
-interface FlagsInputFieldProps {
-  textlabel?: string
+import { DateInput } from "@mantine/dates"
+import { Label } from "../Label"
+import InfoMessage from "./InfoMessage"
+interface DatePickerInputProps {
+  label: string
+  placeholder: string
   required?: boolean
+  leftSection?: React.ReactNode
+  infoMessage?: string
+
 }
 
-const DateCalender = ({
-  textlabel,
+function DatePickerInput({
+  label,
+  placeholder,
+  leftSection,
   required,
-}: FlagsInputFieldProps) => {
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null);
+  infoMessage
+
+}: DatePickerInputProps) {
+  const [value, setValue] = useState<Date | null>(null)
 
   return (
-
     <div>
       <Label htmlFor="name">
-        {textlabel}
+        {label}
         {required && <span className="mx-1">*</span>}
       </Label>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
-          label=""
-          value={selectedDate}
-          onChange={(newValue: Dayjs | null) => setSelectedDate(newValue)}
-          slots={{
-            textField: TextField,
-          }}
-          slotProps={{
-            textField: {
-              variant: "outlined",
-            },
-          }}
-        />
-      </LocalizationProvider>
-    </div>
-  );
-};
 
-export default DateCalender;
+      <DateInput
+        value={value}
+        onChange={setValue}
+        rightSection={<InfoMessage infoMessage={infoMessage} />}
+
+        leftSection={leftSection}
+        placeholder={placeholder}
+        labelProps={{
+          className: "text-[14px] text-[#979C9E] font-poppins font-semibold",
+        }}
+        className="flex-1"
+      />
+    </div>
+  )
+}
+
+export default DatePickerInput

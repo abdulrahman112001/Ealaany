@@ -7,8 +7,8 @@ function PlateFormBanner() {
       style={{ backgroundImage: "url('/images/banners.png')" }}
     >
       <div className="m-auto text-center">
-        <h2 className="text-[50px] text-secondary">Join Our PLATFORM!</h2>
-        <p className="mt-3 text-2xl text-gray ">
+        <h2 className="text-[25px] md:text-[50px] text-secondary">Join Our PLATFORM!</h2>
+        <p className="mt-3 text-xl md:text-2xl text-gray ">
           Sign up now to start your advertising journey with us.
         </p>
       </div>

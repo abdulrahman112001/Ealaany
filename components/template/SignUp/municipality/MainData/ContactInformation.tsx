@@ -1,7 +1,6 @@
 import { Button } from "@/components/atoms/buttons/Button";
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
 import PhoneNumberField from "@/components/atoms/inputs/PhoneNumberField";
-import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
 import { Container, NativeSelect } from "@mantine/core";
 import Image from "next/image";
 
@@ -10,14 +9,14 @@ import Image from "next/image";
 
 function ContactInformation() {
     return (
-        <div className="mr-10">
+        <div className="md:mr-10">
             <Container >
                 <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
                     Contact Information
                 </h2>
-                <div className="bg-white rounded-3xl p-8 w-[650px] shadow-2xl">
+                <div className="bg-white rounded-3xl p-8 max-w-[650px] shadow-2xl">
                     <p className="font-poppins text-base pb-6">About you</p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="col-span-2">
                             <BaseInputField
                                 label="nick Name"
@@ -60,14 +59,31 @@ function ContactInformation() {
                             />
                         </div>
 
-                        <div>
-                            <FlagsForm
+                        <div className="col-span-2 md:col-span-1">
+                            <NativeSelect
                                 label="municipality country"
                                 required
+                                value={""}
+                                // onChange={(event) => setValue(event.currentTarget.value)}
+                                leftSection={
+                                    <Image src="/images/flag.png" alt="country" width={20} height={20} />
+                                }
+                                data={[
+                                    { value: "", label: "Selection item", disabled: true },
+                                    { value: "Saudia", label: "Saudia" },
+                                    { value: "Egypt", label: "Egypt" },
+
+                                ]}
+                                labelProps={{
+                                    className:
+                                        "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                                }}
+                                className="flex-1"
                             />
                         </div>
 
-                        <div >
+
+                        <div className="col-span-2 md:col-span-1">
                             <NativeSelect
                                 label="municipality city"
                                 required
@@ -90,7 +106,7 @@ function ContactInformation() {
                             />
                         </div>
 
-                        <div>
+                        <div className="col-span-2 md:col-span-1">
                             <BaseInputField
                                 label="department"
                                 required
@@ -107,7 +123,7 @@ function ContactInformation() {
                             />
                         </div>
 
-                        <div >
+                        <div className="col-span-2 md:col-span-1">
                             <BaseInputField
                                 label="offcial position"
                                 placeholder="name"

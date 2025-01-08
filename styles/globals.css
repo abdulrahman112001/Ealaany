@@ -152,3 +152,17 @@ header {
   background-color: #D83232 !important;
   border: 1px solid rgba(0, 0, 0, 0.6);
 }
+
+/* ملف CSS */
+
+
+@media (max-width: 768px) {
+  .stepper-root .mantine-Stepper-root {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content:center !important;
+  }
+  .mantine-Stepper-steps{
+margin: 50px !important;
+  }
+}

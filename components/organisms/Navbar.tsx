@@ -22,13 +22,13 @@ export default function Navbar() {
   const theme = useMantineTheme()
 
   return (
-    <Box pb={40} >
-      <header className={`${classes.header} z-50 relative `} >
+    <Box  className="pb-0 md:pb-10" >
+      <header className={`${classes.header} z-50 relative  `} >
         <Group justify="space-between" h="100%">
           <Image
             src="/images/logo.png"
             alt="logo"
-            className="ml-16"
+            className="md:ml-16"
             width={195}
             height={36}
           />

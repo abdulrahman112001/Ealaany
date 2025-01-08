@@ -11,15 +11,15 @@ function IndividualInformation() {
     const [userType, setUserType] = useState("freelancer");
 
     return (
-        <div className="mr-10">
+        <div className="md:mr-10">
             <Container>
                 <h2 className="text-center text-2xl mx-auto font-extrabold font-poppins pb-8">
                     Individual/Corporate Information
                 </h2>
 
-                <div className="bg-white rounded-3xl w-[650px] p-8 shadow-2xl">
+                <div className="bg-white rounded-3xl max-w-[650px] p-8 shadow-2xl">
                     <p className="font-poppins text-base pb-6">About you</p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="col-span-2">
                             <BaseInputField
                                 label="nick Name"
@@ -45,7 +45,7 @@ function IndividualInformation() {
 
                         <p className="font-poppins text-base mb-[-12px] ms-[5px] col-span-2">if you</p>
 
-                        <div className="col-span-1 mb-6">
+                        <div className="col-span-2 lg:col-span-1">
                             <div
                                 onClick={() => setUserType("freelancer")}
                                 className={`flex-1 text-center text-sm font-semibold py-[13px] border ${userType === "freelancer"
@@ -56,7 +56,7 @@ function IndividualInformation() {
                                 freelancer
                             </div>
                         </div>
-                        <div className="col-span-1 mb-6">
+                        <div className="col-span-2 lg:col-span-1 mb-6">
                             <div
                                 onClick={() => setUserType("corporate")}
                                 className={`flex-1 text-center text-sm font-semibold py-[13px] border ${userType === "corporate"

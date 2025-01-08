@@ -1,9 +1,7 @@
-import SignInForm from "@/components/template/SignIn/SignIn"
+import Main from "@/components/template/SignIn/Main"
 
 function SignIn() {
-    return (
-        <SignInForm />
-    )
+  return <Main />
 }
 
 export default SignIn

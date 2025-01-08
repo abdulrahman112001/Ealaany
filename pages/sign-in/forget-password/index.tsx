@@ -1,8 +1,8 @@
-import ForgetPassword from "@/components/template/SignIn/forgetPassword/forgetPassword"
+import Main from "@/components/template/SignIn/forgetPassword/Main"
 
 function ForgetPasswordForm() {
     return (
-        <ForgetPassword />
+        <Main />
     )
 }
 

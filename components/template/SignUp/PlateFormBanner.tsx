@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
 function PlateFormBanner() {
   return (
     <div
-      className="w-full h-[250px] bg-cover bg-bottom flex item-center justify-center"
+      className="w-full patternY h-[250px] bg-cover bg-bottom flex item-center justify-center"
       style={{ backgroundImage: "url('/images/banners.png')" }}
     >
       <div className="m-auto text-center">
@@ -13,7 +13,7 @@ function PlateFormBanner() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default PlateFormBanner
+export default PlateFormBanner;

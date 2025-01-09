@@ -8,11 +8,11 @@ import Image from "next/image"
 function CorporateInformation() {
   return (
     <div className="md:mr-10">
-      <Container >
+      <Container>
         <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
           corporate Information
         </h2>
-        <div className="bg-white rounded-3xl max-w-[650px] p-8 shadow-2xl">
+        <div className="bg-white rounded-3xl max-w-[650px] p-4 md:p-8 shadow-2xl">
           <p className="font-poppins text-base pb-6">About you</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2">
@@ -35,7 +35,9 @@ function CorporateInformation() {
             <div className="col-span-2 mb-10">
               <PhoneNumberField
                 label="secondary number"
-                onChange={() => { }} value="" />
+                onChange={() => {}}
+                value=""
+              />
             </div>
 
             <p className="font-poppins text-base pb-2 col-span-2">
@@ -66,13 +68,17 @@ function CorporateInformation() {
                 value={""}
                 // onChange={(event) => setValue(event.currentTarget.value)}
                 leftSection={
-                  <Image src="/images/flag.png" alt="country" width={20} height={20} />
+                  <Image
+                    src="/images/flag.png"
+                    alt="country"
+                    width={20}
+                    height={20}
+                  />
                 }
                 data={[
                   { value: "", label: "Selection item", disabled: true },
                   { value: "Saudia", label: "Saudia" },
                   { value: "Egypt", label: "Egypt" },
-
                 ]}
                 labelProps={{
                   className:
@@ -89,7 +95,12 @@ function CorporateInformation() {
                 value={""}
                 // onChange={(event) => setValue(event.currentTarget.value)}
                 leftSection={
-                  <Image src="/images/id.png" alt="city" width={20} height={20} />
+                  <Image
+                    src="/images/id.png"
+                    alt="city"
+                    width={20}
+                    height={20}
+                  />
                 }
                 data={[
                   { value: "", label: "Selection item", disabled: true },
@@ -197,7 +208,6 @@ function CorporateInformation() {
                     "text-[14px] text-[#979C9E] font-poppins font-semibold",
                 }}
               />
-
             </div>
 
             <div className="col-span-2">
@@ -221,7 +231,12 @@ function CorporateInformation() {
                 label="main office fax"
                 placeholder="Select your verification method"
                 leftSection={
-                  <Image src="/images/fax.png" alt="fax" width={20} height={20} />
+                  <Image
+                    src="/images/fax.png"
+                    alt="fax"
+                    width={20}
+                    height={20}
+                  />
                 }
                 name="mainOfficeFax"
               />

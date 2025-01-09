@@ -13,7 +13,7 @@ function ContactInformation() {
           Contact Information
         </h2>
 
-        <div className="bg-white rounded-3xl max-w-[650px] p-8 shadow-2xl">
+        <div className="bg-white rounded-3xl max-w-[650px] p-4 md:p-8 shadow-2xl">
           <p className="font-poppins text-base pb-6">About you</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2">
@@ -36,7 +36,7 @@ function ContactInformation() {
             <div className="col-span-2 mb-10">
               <PhoneNumberField
                 label="secondary number"
-                onChange={() => { }}
+                onChange={() => {}}
                 value=""
               />
             </div>
@@ -69,13 +69,17 @@ function ContactInformation() {
                 value={""}
                 // onChange={(event) => setValue(event.currentTarget.value)}
                 leftSection={
-                  <Image src="/images/flag.png" alt="country" width={20} height={20} />
+                  <Image
+                    src="/images/flag.png"
+                    alt="country"
+                    width={20}
+                    height={20}
+                  />
                 }
                 data={[
                   { value: "", label: "Selection item", disabled: true },
                   { value: "Saudia", label: "Saudia" },
                   { value: "Egypt", label: "Egypt" },
-
                 ]}
                 labelProps={{
                   className:

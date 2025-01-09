@@ -126,9 +126,28 @@ export default function Navbar() {
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+         
+            <Link href="/sign-up" passHref>
+              <Button
+                component="a"
+                variant="filled"
+                styles={{
+                  root: {
+                    borderRadius: "12px",
+                    backgroundColor: "#D83232",
+                    fontSize: "16px",
+                  },
+                }}
+              >
+                + Sign up
+              </Button>
+            </Link>
+            <a href="#" className="text-[#D83232] text-base font-bold mr-10">
+              Log in
+            </a>
           </Group>
+
+       
         </ScrollArea>
       </Drawer>
     </Box>

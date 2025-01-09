@@ -14,7 +14,7 @@ function PersonalInformation() {
           Personal Information
         </h2>
 
-        <div className="bg-white rounded-3xl max-w-[650px] p-8 shadow-2xl">
+        <div className="bg-white rounded-3xl max-w-[650px] p-4 md:p-8 shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2 md:col-span-1">
               <BaseInputField
@@ -55,7 +55,7 @@ function PersonalInformation() {
                 label="phone number"
                 required
                 value={""}
-                onChange={() => { }}
+                onChange={() => {}}
               />
             </div>
 

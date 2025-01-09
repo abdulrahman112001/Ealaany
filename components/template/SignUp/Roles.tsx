@@ -1,20 +1,32 @@
-import Image from "next/image"
-import Link from "next/link"
-import React from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 function Roles() {
+  const [activeLink, SetactiveLink] = useState("");
+  const router = useRouter();
+
   return (
-    <div className="w-full  mt-12 p-12">
-      <div className="w-[80%]  m-auto  bg-white rounded-[40px] p-10  my-12 shadow-2xl ">
+    <div className="w-full  mt-12 ">
+      <div className="w-[95%] md:w-[80%]  m-auto  bg-white rounded-[40px] p-4 md:p-10  my-12 shadow-2xl ">
         <div className="w-full text-center my-2 font-PoppinsBold text-secondary text-[32px]">
-          <span className="font-bold text-main">Choose your role</span>
+          <span className="font-bold  text-[16px] md:text-[30px]   text-main">
+            Choose your role
+          </span>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-          <Link
-            href={"sign-up/advertiser"}
-            className="  rounded-[40px]  border border-borderColor"
+          <div
+            className={`cursor-pointer relative  rounded-[40px] hover:bg-[#e0f8fa] duration-1000  ${
+              activeLink === "sign-up/advertiser"
+                ? "bg-[#e0f8fa] activeCircle  "
+                : ""
+            } border border-borderColor`}
           >
-            <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
+            <div
+              className="flex flex-col p-4 justify-center items-center gap-2 text-center"
+              onClick={() => SetactiveLink("sign-up/advertiser")}
+            >
               <Image
                 width={120}
                 height={120}
@@ -27,10 +39,14 @@ function Roles() {
                 seeking to promote my brand effectively
               </p>
             </div>
-          </Link>
-          <Link
-            href={"sign-up/investor"}
-            className="  rounded-[40px]  border border-borderColor"
+          </div>
+          <div
+            className={`cursor-pointer relative  rounded-[40px] hover:bg-[#e0f8fa] duration-1000 ${
+              activeLink === "sign-up/investor"
+                ? "bg-[#e0f8fa] activeCircle  "
+                : ""
+            } border border-borderColor`}
+            onClick={() => SetactiveLink("sign-up/investor")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
               <Image
@@ -45,12 +61,16 @@ function Roles() {
                 for profitable advertising opportunities
               </p>
             </div>
-          </Link>
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          <Link
-            href={"sign-up/municipality"}
-            className="  rounded-[40px]  border border-borderColor"
+          <div
+            className={`cursor-pointer  relative rounded-[40px] hover:bg-[#e0f8fa] duration-1000 ${
+              activeLink === "sign-up/municipality"
+                ? "bg-[#e0f8fa] activeCircle"
+                : ""
+            } border border-borderColor`}
+            onClick={() => SetactiveLink("sign-up/municipality")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
               <Image
@@ -65,10 +85,14 @@ function Roles() {
                 ensuring compliance with regulations
               </p>
             </div>
-          </Link>
-          <Link
-            href={"sign-up/beneficiary"}
-            className="  rounded-[40px]  border border-borderColor"
+          </div>
+          <div
+            className={`cursor-pointer relative rounded-[40px] hover:bg-[#e0f8fa] duration-1000 ${
+              activeLink === "sign-up/beneficiary"
+                ? "bg-[#e0f8fa] activeCircle"
+                : ""
+            } border border-borderColor`}
+            onClick={() => SetactiveLink("sign-up/beneficiary")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
               <Image
@@ -83,10 +107,14 @@ function Roles() {
                 property for billboard usage.
               </p>
             </div>
-          </Link>
-          <Link
-            href={"sign-up/engineering"}
-            className="  rounded-[40px]  border border-borderColor"
+          </div>
+          <div
+            className={`cursor-pointer relative rounded-[40px] hover:bg-[#e0f8fa] duration-1000 ${
+              activeLink === "sign-up/engineering"
+                ? "bg-[#e0f8fa] activeCircle"
+                : ""
+            } border border-borderColor`}
+            onClick={() => SetactiveLink("sign-up/engineering")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
               <Image
@@ -101,7 +129,7 @@ function Roles() {
                 , developing compliant ads plans
               </p>
             </div>
-          </Link>
+          </div>
         </div>
 
         <div className="w-full text-center my-5 font-extralight  text-sm">
@@ -112,12 +140,21 @@ function Roles() {
             </a>{" "}
           </span>
         </div>
-        <button className="w-full bg-[#00CCDC] mt-5 h-[56px] text-white  rounded-[8px]">
+        <button
+          className={` w-full ${
+            activeLink == "" ? "bg-[#e0f8fa] " : "bg-[#00ccdc]"
+          } my-5 h-[56px] text-white  rounded-[8px] `}
+          onClick={() => {
+            if (activeLink !== "") {
+              router.push(`${activeLink}`);
+            }
+          }}
+        >
           submit
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Roles
+export default Roles;

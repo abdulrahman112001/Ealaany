@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -27,10 +26,10 @@ function Roles() {
               className="flex flex-col p-4 justify-center items-center gap-2 text-center"
               onClick={() => SetactiveLink("sign-up/advertiser")}
             >
-              <Image
+              <img
                 width={120}
                 height={120}
-                src="/images/characters.png "
+                src="/images/characters.png"
                 className="my-4  "
                 alt="man"
               />
@@ -49,7 +48,7 @@ function Roles() {
             onClick={() => SetactiveLink("sign-up/investor")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
-              <Image
+              <img
                 width={70}
                 height={70}
                 src="/images/MAN.png "
@@ -73,7 +72,7 @@ function Roles() {
             onClick={() => SetactiveLink("sign-up/municipality")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
-              <Image
+              <img
                 width={80}
                 height={80}
                 src="/images/MAN2.png "
@@ -95,7 +94,7 @@ function Roles() {
             onClick={() => SetactiveLink("sign-up/beneficiary")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
-              <Image
+              <img
                 width={220}
                 height={220}
                 src="/images/characters (3).png "
@@ -117,7 +116,7 @@ function Roles() {
             onClick={() => SetactiveLink("sign-up/engineering")}
           >
             <div className="flex flex-col p-4 justify-center items-center gap-2 text-center">
-              <Image
+              <img
                 width={170}
                 height={170}
                 src="/images/characters (4).png "

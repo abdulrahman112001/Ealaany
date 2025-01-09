@@ -22,18 +22,18 @@ export default function Navbar() {
   const theme = useMantineTheme()
 
   return (
-    <Box  className="pb-0 md:pb-10" >
-      <header className={`${classes.header} z-50 relative  `} >
+    <Box className="pb-0 md:pb-10">
+      <header className={`${classes.header} z-50 relative  `}>
         <Group justify="space-between" h="100%">
           <Link href="/" passHref>
-          <Image
-            src="/images/logo.png"
-            alt="logo"
-            className="md:ml-16"
-            width={195}
-            height={36}
-          />
-</Link>
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              className="md:ml-16"
+              width={195}
+              height={36}
+            />
+          </Link>
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home
@@ -81,10 +81,12 @@ export default function Navbar() {
                 + Sign up
               </Button>
             </Link>
-            <Link href="/sign-in" className="text-[#D83232] text-base font-bold mr-10">
+            <Link
+              href="/sign-in"
+              className="text-[#D83232] text-base font-bold mr-10"
+            >
               log in
             </Link>
-
           </Group>
 
           <Burger
@@ -94,7 +96,6 @@ export default function Navbar() {
           />
         </Group>
       </header>
-
       <Drawer
         opened={drawerOpened}
         onClose={closeDrawer}
@@ -104,29 +105,28 @@ export default function Navbar() {
         hiddenFrom="sm"
         zIndex={1000000}
       >
-        <ScrollArea h="calc(100vh - 80px" mx="-md">
+        <ScrollArea h="calc(100vh - 80px)" mx="-md">
           <Divider my="sm" />
 
-          <a href="#" className={classes.link}>
+          <a href="#" className={classes.link} onClick={closeDrawer}>
             Home
           </a>
-          <a href="#" className={classes.link}>
+          <a href="#" className={classes.link} onClick={closeDrawer}>
             About us
           </a>
-          <a href="#" className={classes.link}>
+          <a href="#" className={classes.link} onClick={closeDrawer}>
             Services
           </a>
-          <a href="#" className={classes.link}>
+          <a href="#" className={classes.link} onClick={closeDrawer}>
             FAQs
           </a>
-          <a href="#" className={classes.link}>
+          <a href="#" className={classes.link} onClick={closeDrawer}>
             Contact us
           </a>
 
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-         
             <Link href="/sign-up" passHref>
               <Button
                 component="a"
@@ -138,16 +138,19 @@ export default function Navbar() {
                     fontSize: "16px",
                   },
                 }}
+                onClick={closeDrawer}
               >
                 + Sign up
               </Button>
             </Link>
-            <a href="#" className="text-[#D83232] text-base font-bold mr-10">
+            <Link
+              href="sign-in"
+              className="text-[#D83232] text-base font-bold mr-10"
+              onClick={closeDrawer}
+            >
               Log in
-            </a>
+            </Link>
           </Group>
-
-       
         </ScrollArea>
       </Drawer>
     </Box>

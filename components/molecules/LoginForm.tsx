@@ -1,4 +1,4 @@
-لهimport React from "react";
+import React from "react";
 import GoogleIcons from "../atoms/icons/googleIcons";
 
 const LoginForm = () => {

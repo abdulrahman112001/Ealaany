@@ -23,6 +23,7 @@ function StepperInvestor() {
         color="#00CCDC"
         onStepClick={setActive}
         orientation="vertical"
+        //@ts-ignore
         styles={stepperStyles}
       >
         <Stepper.Step

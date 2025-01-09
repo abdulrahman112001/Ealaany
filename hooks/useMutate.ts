@@ -31,15 +31,17 @@ export function useMutate<response_T>({
   const token = user_token;
   const authorizationHeader = `Bearer ${token}`;
   const isRTL = useIsRTL();
+  //@ts-ignore
   const baseURL = import.meta.env.VITE_BASE_URL;
 
-  const { data, isLoading, isSuccess, mutate, failureReason, isError } =
+  const { data, isPending, isSuccess, mutate, failureReason, isError } =
     useMutation({
       mutationKey,
       mutationFn: (values) => {
         // Calculate the total file size if formData is true
         if (formData && values instanceof FormData) {
           let totalSize = 0;
+          //@ts-ignore
           for (let pair of values.entries()) {
             if (pair[1] instanceof File) {
               totalSize += pair[1].size;
@@ -75,7 +77,7 @@ export function useMutate<response_T>({
             setUploadProgress(percentCompleted);
           },
         };
-
+//@ts-ignore
         return axios(requestConfig);
       },
       onSuccess,
@@ -85,7 +87,7 @@ export function useMutate<response_T>({
 
   return {
     data,
-    isLoading,
+    isPending,
     isSuccess,
     mutate,
     failureReason,

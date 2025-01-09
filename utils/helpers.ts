@@ -1,9 +1,9 @@
 import { t } from "i18next";
 import type { GroupBase, OptionsOrGroups } from "react-select";
 import { CFile_TP } from "../types";
-import { toHijri } from "hijri-converter";
+// import { toHijri } from "hijri-converter";
 import Cookies from "js-cookie";
-import { saveAs } from "file-saver"; // تأكد من تثبيت مكتبة file-saver
+// import { saveAs } from "file-saver"; // تأكد من تثبيت مكتبة file-saver
 import axios from "axios";
 
 //  PDF OR IMAGE
@@ -20,7 +20,7 @@ export const pdfOrImage = (file: CFile_TP): pdfOrImageReturn => {
   }
 };
 export const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-export const getFileTypeFromURL = (url) => {
+export const getFileTypeFromURL = (url: string) => {
   const extension = url?.split(".")?.pop()?.toLowerCase();
   if (
     extension === "png" ||
@@ -123,7 +123,25 @@ export function convertTo24Hour(timeString: any) {
   return `${hours.toString().padStart(2, "0")}:${minutes}`;
 }
 
-export function convertToDynamicShape(value) {
+interface DynamicShapeItem {
+  key_ar: string;
+  key_en: string;
+  value_ar: string;
+  value_en: string;
+}
+
+interface ConvertedShapeItem {
+  key: {
+    ar: string;
+    en: string;
+  };
+  value: {
+    ar: string;
+    en: string;
+  };
+}
+
+export function convertToDynamicShape(value: DynamicShapeItem[]): ConvertedShapeItem[] {
   return value.map((item) => ({
     key: {
       ar: item.key_ar,
@@ -189,14 +207,14 @@ export function formateTime(dateTimeString: string): string {
   return ` ${formattedTime} ${period} `;
 }
 
-export const convertToHijri = (date: string | number | Date) => {
-  let hijriDate = new Date(date);
-  return toHijri(
-    hijriDate.getFullYear(),
-    hijriDate.getMonth() + 1,
-    hijriDate.getDate()
-  );
-};
+// export const convertToHijri = (date: string | number | Date) => {
+//   let hijriDate = new Date(date);
+//   return toHijri(
+//     hijriDate.getFullYear(),
+//     hijriDate.getMonth() + 1,
+//     hijriDate.getDate()
+//   );
+// };
 export const padWithZero = (number: { toString: () => any }) => {
   let numStr = number.toString();
   if (numStr.length === 1) {
@@ -231,12 +249,16 @@ export const downloadMultiFile = async (
       }
     );
     const blob = new Blob([response.data], { type: "application/zip" });
-    saveAs(blob, "files.zip");
+    // saveAs(blob, "files.zip");
   } catch (error) {
     console.error("Error downloading file", error);
   }
 };
-export const ExportLogs = async ( setLoading) => {
+interface ExportLogsParams {
+  setLoading: (loading: boolean) => void;
+}
+
+export const ExportLogs = async ({ setLoading }: ExportLogsParams): Promise<void> => {
   const token = Cookies.get("token");
 
   try {
@@ -245,10 +267,6 @@ export const ExportLogs = async ( setLoading) => {
     const response = await axios.get(
       "https://file-management.softlabprog.cloud/api/manager/logs/export",
       {
-        // Pass parameters in the request body or query if needed
-        // params: {
-        //   file_ids: itemChecked.length ? itemChecked : filesIds,
-        // },
         responseType: "blob",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -260,7 +278,7 @@ export const ExportLogs = async ( setLoading) => {
       type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     });
 
-    saveAs(blob, "logs.xlsx");
+    // saveAs(blob, "logs.xlsx");
 
   } catch (error) {
     console.error("Error downloading file", error);
@@ -277,7 +295,19 @@ export function hexToRgba(hex: string, opacity: number) {
 
   return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 }
-export function convertFileToLink(file) {
-  const objectURL = URL.createObjectURL(file);
+interface FileObject {
+  name: string;
+  size: number;
+  type: string;
+  arrayBuffer: () => Promise<ArrayBuffer>;
+  slice: (start?: number, end?: number, contentType?: string) => Blob;
+  stream: () => ReadableStream<Uint8Array>;
+  text: () => Promise<string>;
+}
+
+export async function convertFileToLink(file: FileObject): Promise<string> {
+  const arrayBuffer = await file.arrayBuffer();
+  const blob = new Blob([arrayBuffer], { type: file.type });
+  const objectURL = URL.createObjectURL(blob);
   return objectURL;
 }

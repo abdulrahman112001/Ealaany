@@ -1,5 +1,7 @@
 import { SettingProvider } from "./SettingProvider";
 
-export const AuthLayout = ({ children }) => {
+import { ReactNode } from 'react';
+
+export const AuthLayout = ({ children }: { children: ReactNode }) => {
   return <SettingProvider>{children}</SettingProvider>;
 };

@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: AuthProvider_TP) => {
   const logout = useCallback(async () => {
     Cookies.remove("tokin");
     if (setUser) setUser(null);
-    router.push("/", { replace: true });
+    router.replace("/");
   }, [setUser]);
 
   const hasPermission = useCallback(

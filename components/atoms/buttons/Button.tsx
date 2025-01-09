@@ -11,7 +11,7 @@ const buttonVars = tv({
       primary: "bg-primary text-white",
       secondary: "bg-transparent text-secondary",
       outline: "bg-transparent text-secondary  !border-primary",
-      // success: "bg-green-500 text-white",
+      dark: "bg-green-500 text-white",
       // danger: "bg-red-500 text-white",
       // warning: "bg-yellow-500 text-black",
     },
@@ -48,21 +48,21 @@ const buttonVars = tv({
       disabled: true,
       className: "text-gray-500 border-gray-300 border-2 bg-white",
     },
-    {
-      color: "success",
-      bordered: true,
-      className: "text-green-500 border-green-500 bg-white",
-    },
-    {
-      color: "danger",
-      bordered: true,
-      className: "text-red-500 border-red-500 bg-white",
-    },
-    {
-      color: "warning",
-      bordered: true,
-      className: "text-yellow-500 border-yellow-500 bg-white",
-    },
+    // {
+    //   color: "success",
+    //   bordered: true,
+    //   className: "text-green-500 border-green-500 bg-white",
+    // },
+    // {
+    //   color: "danger",
+    //   bordered: true,
+    //   className: "text-red-500 border-red-500 bg-white",
+    // },
+    // {
+    //   color: "warning",
+    //   bordered: true,
+    //   className: "text-yellow-500 border-yellow-500 bg-white",
+    // },
   ],
   defaultVariants: {
     color: "primary",

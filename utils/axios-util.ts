@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import Cookies from "js-cookie";
 import i18n from "../i18n";
-
+//@ts-ignore
 export const baseURL = import.meta.env.VITE_BASE_URL;
 
 const lang = i18n.language.startsWith("ar") ? "ar" : "en";

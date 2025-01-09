@@ -1,7 +1,6 @@
 /////////// IMPORTS
 ///
 import { ReactNode } from "react"
-import usePermission from "../../hooks/usePermission"
 import { permissionsRule_TP } from "../../types"
 ///
 /////////// Types
@@ -23,7 +22,7 @@ export const Can = ({ access, fallback, children, rule }: CanProps_TP) => {
   ///
   /////////// CUSTOM HOOKS
   ///
-  const allowed = usePermission(access, rule)
+  // const allowed = usePermission(access, rule)
   ///
   /////////// STATES
   ///
@@ -34,9 +33,9 @@ export const Can = ({ access, fallback, children, rule }: CanProps_TP) => {
 
   /////////// FUNCTIONS | EVENTS | IF CASES
   ///
-  if (allowed) {
-    return <>{children}</>
-  }
+  // if (allowed) {
+  //   return <>{children}</>
+  // }
   ///
   return <>{fallback}</>
 }

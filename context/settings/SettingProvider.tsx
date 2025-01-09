@@ -13,13 +13,14 @@ type SettingProviderProps = {
 };
 
 type SettingContextType = {
-  setting: Record<string, any>;
+  setting: Record<string, any> | undefined;
   setSetting: (value: any) => void;
 };
 
 type DataItem = {
   id: string | number;
   value: any;
+  key_en: string;
 };
 
 type Item = {

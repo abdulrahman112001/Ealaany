@@ -154,7 +154,10 @@ const Footer = () => {
             <h4 className="text-lg font-PoppinsLight mb-4">
               Join Our Newsletter & More Information
             </h4>
-            <Formik>
+            <Formik
+              initialValues={{}}
+              onSubmit={(values) => { }}
+            >
               <Form className=" w-full">
                 {/* <input
                 type="email"

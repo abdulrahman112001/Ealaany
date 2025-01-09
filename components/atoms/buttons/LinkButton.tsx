@@ -1,5 +1,6 @@
+import Link from "next/link"
 import { ReactNode } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { tv, type VariantProps } from "tailwind-variants"
 
 const linkButton = tv({
@@ -32,7 +33,7 @@ export const LinkButton = ({
 }) => {
   return (
     <Link
-      to={to}
+      href={to}
       className={linkButton({
         color,
         disabled,

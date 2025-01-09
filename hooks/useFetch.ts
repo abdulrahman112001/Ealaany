@@ -1,10 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 import { notify } from "../utils/toast";
 import { useIsRTL } from "./useIsRTL";
-import { useAuth } from "../context/auth-and-perm/AuthProvider";
-import { useRouter } from "next/router";
+
+interface ImportMeta {
+  env: {
+    VITE_BASE_URL: string;
+  };
+}
 
 type useFetchPops_TP = {
   queryKey: [string];
@@ -38,6 +43,7 @@ function useFetch<T>({
 
     },
   };
+  //@ts-ignore
   const baseURL = import.meta.env.VITE_BASE_URL;
 
 
@@ -47,6 +53,7 @@ function useFetch<T>({
       axios.get(`${baseURL}/${endpoint}`, config).then((res) => res.data),
     enabled,
     select,
+    //@ts-ignore
     onError: (error) => {
       notify("error", error?.response?.data?.message);
       if (error?.response?.data?.message == "Unauthenticated.") {

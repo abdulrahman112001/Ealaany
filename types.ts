@@ -1,7 +1,7 @@
 import { AxiosRequestConfig, AxiosResponseHeaders, HttpStatusCode, RawAxiosResponseHeaders } from "axios"
 import { FormikErrors } from "formik"
 import React from "react"
-import { SlideImage } from "yet-another-react-lightbox"
+// import { SlideImage } from "yet-another-react-lightbox"
 
 /* 
 permissions
@@ -59,7 +59,7 @@ export interface CFile_TP extends File {
 }
 
 // custom image file type
-export interface CImageFile_TP extends SlideImage, CFile_TP {
+export interface CImageFile_TP extends  CFile_TP {
   type: "image"
   path?: string
 }

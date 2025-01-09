@@ -1,3 +1,4 @@
+import { stepperStyles } from "@/utils/const"
 import { Stepper } from "@mantine/core"
 import { useState } from "react"
 import ContactInformation from "./MainData/ContactInformation"
@@ -16,42 +17,13 @@ function StepperEngineering() {
   })
 
   return (
-    <div className="ml-10">
+    <div className="md:ml-10 stepper-root">
       <Stepper
         active={active}
         color="#00CCDC"
         onStepClick={setActive}
         orientation="vertical"
-        styles={{
-          stepIcon: {
-            width: 40,
-            height: 40,
-            minWidth: 40,
-            minHeight: 40,
-
-            backgroundColor: "transparent",
-            borderColor: "#606060",
-            borderRadius: "50%",
-            border: "2px solid gray",
-            transition: "border-color 0.3s",
-          },
-          stepLabel: {
-            fontSize: 18,
-            fontWeight: 500,
-            alignItems: "center",
-          },
-          stepDescription: {
-            fontSize: 12,
-            color: "#00CCDC",
-          },
-          root: {
-            display: "flex",
-            justifyContent: "space-between",
-          },
-          steps: {
-            marginTop: 100,
-          },
-        }}
+        styles={stepperStyles}
       >
         <Stepper.Step
           style={{

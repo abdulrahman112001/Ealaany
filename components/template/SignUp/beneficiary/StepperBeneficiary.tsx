@@ -3,6 +3,7 @@ import { useState } from "react"
 import IndividualCorporateInformation from "./MainData/IndividualCorporateInformation"
 import PersonalInformation from "./MainData/PersonalInformation"
 import SecurityAndLogicDetails from "./MainData/SecurityAndLogicDetails"
+import { stepperStyles } from "@/utils/const"
 
 function StepperBeneficiary() {
     const [active, setActive] = useState(0)
@@ -16,41 +17,14 @@ function StepperBeneficiary() {
     })
 
     return (
-        <div className="ml-10">
+        <div className="md:ml-10 stepper-root">
             <Stepper
                 active={active}
                 color="#00CCDC"
                 onStepClick={setActive}
                 orientation="vertical"
-                styles={{
-                    stepIcon: {
-                        width: 40,
-                        height: 40,
-                        minWidth: 40,
-                        minHeight: 40,
-                        backgroundColor: "transparent",
-                        borderColor: "#606060",
-                        borderRadius: "50%",
-                        border: "2px solid gray",
-                        transition: "border-color 0.3s",
-                    },
-                    stepLabel: {
-                        fontSize: 18,
-                        fontWeight: 500,
-                        alignItems: "center",
-                    },
-                    stepDescription: {
-                        fontSize: 12,
-                        color: "#00CCDC",
-                    },
-                    root: {
-                        display: "flex",
-                        justifyContent: "space-between",
-                    },
-                    steps: {
-                        marginTop: 100,
-                    }
-                }}
+                styles={stepperStyles}
+
             >
                 <Stepper.Step
                     style={{

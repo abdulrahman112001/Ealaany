@@ -10,15 +10,15 @@ import { useState } from "react";
 const IndividualCorporateInformation = () => {
   const [selected, setSelected] = useState("individual");
   return (
-    <div className="mr-10">
+    <div className="md:mr-10">
       <Container>
         <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
           Individual/Corporate Information
         </h2>
 
-        <div className="bg-white w-[650px] rounded-3xl p-8 shadow-2xl">
+        <div className="bg-white max-w-[650px] rounded-3xl p-8 shadow-2xl">
           <p className="font-poppins text-base pb-6">About you</p>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2">
               <BaseInputField
                 label="nick Name"
@@ -45,7 +45,7 @@ const IndividualCorporateInformation = () => {
             <p className="font-poppins text-base mb-[-12px] ms-[5px] col-span-2">if you</p>
 
 
-            <div className="col-span-1 mb-6">
+            <div className="col-span-2 lg:col-span-1">
               <div
                 onClick={() => setSelected("individual")}
                 className={`flex-1 text-center text-sm font-semibold py-[13px] border ${selected === "individual"
@@ -56,7 +56,7 @@ const IndividualCorporateInformation = () => {
                 individual
               </div>
             </div>
-            <div className="col-span-1">
+            <div className="col-span-2 lg:col-span-1 mb-6">
               <div
                 onClick={() => setSelected("corporate")}
                 className={`flex-1 text-center text-sm font-semibold py-[13px] border ${selected === "corporate"

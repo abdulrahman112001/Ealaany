@@ -53,9 +53,9 @@ const OTPPage: React.FC = () => {
     };
 
     return (
-        <div className="flex justify-center items-center mt-20 mr-16">
-            <div className="bg-white p-10 rounded-[40px] shadow-lg w-[500px]">
-                <h2 className="flex justify-center items-center text-xl font-semibold font-poppins text-[#008994] mb-4">
+        <div className="md:mr-20 mt-10">
+            <div className="bg-white p-10 rounded-[40px] shadow-lg md:w-[500px] sm:w-[200px]">
+                <h2 className="text-center text-2xl font-extrabold font-poppins pb-6 text-[#008994] mb-4">
                     Enter your OTP
                 </h2>
                 <div className="flex justify-center space-x-2 mb-2">

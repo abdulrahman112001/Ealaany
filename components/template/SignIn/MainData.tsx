@@ -5,11 +5,10 @@ import BaseInputField from '@/components/atoms/inputs/BaseInputField'
 import { Container } from '@mantine/core'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 function MainData() {
   return (
-    <div className="flex justify-center items-start  bg-gray-100">
+    <div className="flex justify-center items-start mt-10 bg-gray-100">
       <Container>
         <h2 className="text-center text-2xl font-extrabold font-poppins pb-6">
           Sign In
@@ -51,7 +50,7 @@ function MainData() {
               />
             </div>
 
-            <div>
+            <div className='col-span-2'>
               <Link
                 href="/sign-in/forget-password"
                 className="underline text-[#979C9E] text-sm font-poppins"

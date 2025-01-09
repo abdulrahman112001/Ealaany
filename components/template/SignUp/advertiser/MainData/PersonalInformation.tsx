@@ -55,7 +55,7 @@ function PersonalInformation() {
                 label="phone number"
                 required
                 value={""}
-                onChange={() => {}}
+                onChange={() => { }}
               />
             </div>
 
@@ -83,7 +83,7 @@ function PersonalInformation() {
             </div>
           </div>
 
-          <p className="relative font-poppins text-center text-[#636363] text-sm p-4 before:content-[''] before:absolute before:w-[250px] before:h-[1px] before:bg-[#EAEAEA] before:left-0 before:top-1/2 after:content-[''] after:absolute after:w-[250px] after:h-[1px] after:bg-[#EAEAEA] after:right-0 after:top-1/2">
+          <p className="relative font-poppins text-center text-[#636363] text-sm p-4 before:content-[''] before:absolute before:w-[220px] before:h-[1px] before:bg-[#EAEAEA] before:left-0 before:top-1/2 after:content-[''] after:absolute after:w-[220px] after:h-[1px] after:bg-[#EAEAEA] after:right-0 after:top-1/2">
             Or
           </p>
           <GoogleSignUpButton />

@@ -1,8 +1,7 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
-import { FlagsForm } from "@/components/molecules/Selects/FlagsForm";
 import { NativeSelect } from "@mantine/core";
 import Image from "next/image";
-import DateCalender from "../inputs/DatePicker";
+import { default as DatePickerInput } from "../inputs/DatePicker";
 
 function FreelanceForm() {
     return (
@@ -30,14 +29,30 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div>
-                <FlagsForm
+            <div className="col-span-2 md:col-span-1">
+                <NativeSelect
                     label="freelancer country"
                     required
+                    value={""}
+                    // onChange={(event) => setValue(event.currentTarget.value)}
+                    leftSection={
+                        <Image src="/images/flag.png" alt="country" width={20} height={20} />
+                    }
+                    data={[
+                        { value: "", label: "Selection item", disabled: true },
+                        { value: "Saudia", label: "Saudia" },
+                        { value: "Egypt", label: "Egypt" },
+
+                    ]}
+                    labelProps={{
+                        className:
+                            "text-[14px] text-[#979C9E] font-poppins font-semibold",
+                    }}
+                    className="flex-1"
                 />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
                 <NativeSelect
                     label="freelancer city"
                     required
@@ -61,7 +76,7 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
                 <BaseInputField
                     label="corporate license number"
                     required
@@ -82,7 +97,7 @@ function FreelanceForm() {
 
             </div>
 
-            <div >
+            <div className="col-span-2 md:col-span-1">
                 <BaseInputField
                     label="occupation"
                     required
@@ -94,16 +109,18 @@ function FreelanceForm() {
                 />
             </div>
 
-            <div>
-                <DateCalender
-                    textlabel="freelancer license Expiry date"
+            <div className="col-span-2 md:col-span-1">
+                <DatePickerInput
+                    label="freelancer license Expiry date"
+                    placeholder="date"
                     required
                 />
             </div>
 
-            <div >
-                <DateCalender
-                    textlabel="date of birth"
+            <div className="col-span-2 md:col-span-1">
+                <DatePickerInput
+                    label="date of birth"
+                    placeholder="date"
                 />
             </div>
 

@@ -25,6 +25,7 @@ export default function Navbar() {
     <Box  className="pb-0 md:pb-10" >
       <header className={`${classes.header} z-50 relative  `} >
         <Group justify="space-between" h="100%">
+          <Link href="/" passHref>
           <Image
             src="/images/logo.png"
             alt="logo"
@@ -32,7 +33,7 @@ export default function Navbar() {
             width={195}
             height={36}
           />
-
+</Link>
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home

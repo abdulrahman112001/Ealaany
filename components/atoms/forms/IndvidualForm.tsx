@@ -1,7 +1,7 @@
 import BaseInputField from "@/components/atoms/inputs/BaseInputField";
 import { NativeSelect } from "@mantine/core";
 import Image from "next/image";
-import DateCalender from "../inputs/DatePicker";
+import DatePickerInput from "../inputs/DatePicker";
 
 function IndvidualForm() {
 
@@ -29,7 +29,7 @@ function IndvidualForm() {
                 />
             </div>
 
-            <div>
+            <div className="col-span-2 md:col-span-1">
                 <BaseInputField
                     label="national ID number"
                     required
@@ -41,16 +41,18 @@ function IndvidualForm() {
                 />
             </div>
 
-            <div >
-                <DateCalender
-                    textlabel="Occupation"
+            <div className="col-span-2 md:col-span-1">
+                <DatePickerInput
+                    label="Occupation"
+                    placeholder="date"
                 />
 
             </div>
 
-            <div >
-                <DateCalender
-                    textlabel="Date of Barth"
+            <div className="col-span-2">
+                <DatePickerInput
+                    label="Date of Barth"
+                    placeholder="date"
 
                 />
             </div>

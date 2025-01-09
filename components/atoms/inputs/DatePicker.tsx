@@ -1,13 +1,16 @@
-import React, { useState } from "react"
 import "@mantine/dates/styles.css"
+import React, { useState } from "react"
 
 import { DateInput } from "@mantine/dates"
 import { Label } from "../Label"
+import InfoMessage from "./InfoMessage"
 interface DatePickerInputProps {
   label: string
   placeholder: string
   required?: boolean
   leftSection?: React.ReactNode
+  infoMessage?: string
+
 }
 
 function DatePickerInput({
@@ -15,6 +18,8 @@ function DatePickerInput({
   placeholder,
   leftSection,
   required,
+  infoMessage
+
 }: DatePickerInputProps) {
   const [value, setValue] = useState<Date | null>(null)
 
@@ -28,6 +33,8 @@ function DatePickerInput({
       <DateInput
         value={value}
         onChange={setValue}
+        rightSection={<InfoMessage infoMessage={infoMessage} />}
+
         leftSection={leftSection}
         placeholder={placeholder}
         labelProps={{

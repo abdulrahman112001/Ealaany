@@ -74,10 +74,11 @@ function SecurityAndLogicDetails() {
                       <p className="font-poppins text-md sm:text-sm lg:text-base">
                         Yes, I understand and agree to the
                       </p>
-                      <span className="flex flex-wrap text-sm sm:text-xs lg:text-base text-gray-800">
-                        Terms and Conditions agreement{" "}
+                      <span className="flex flex-wrap text-sm sm:text-xs lg:text-base text-[#00CCDC]">
+                        Terms and Conditions agreement
                         <FiExternalLink className="mt-1 mx-1" />
-                        <span className="font-semibold mx-1">and</span> privacy policy{" "}
+                        <span className="font-semibold mx-1 text-black">and</span>
+                        privacy policy
                         <FiExternalLink className="mt-1 mx-1" />
                       </span>
                     </>

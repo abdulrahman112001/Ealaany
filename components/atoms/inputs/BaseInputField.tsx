@@ -1,8 +1,8 @@
-import { Button, TextInput, Tooltip } from "@mantine/core"
+import { TextInput } from "@mantine/core"
+import { useFormikContext } from "formik"
 import React from "react"
 import { Label } from "../Label"
 import InfoMessage from "./InfoMessage"
-import { useFormikContext } from "formik"
 
 interface BaseInputFieldProps {
   leftSection?: React.ReactNode
@@ -12,7 +12,8 @@ interface BaseInputFieldProps {
   maxLength?: number
   inputMode?: "text" | "numeric"
   required?: boolean
-  infoMessage?:string
+  infoMessage?: string
+
 }
 
 function BaseInputField({
@@ -45,7 +46,7 @@ function BaseInputField({
         maxLength={maxLength}
         className="flex-1"
         inputMode={inputMode}
-        // onChange={(event) => setFieldValue(name, event.currentTarget.value)}
+      // onChange={(event) => setFieldValue(name, event.currentTarget.value)}
       />
     </div>
   )

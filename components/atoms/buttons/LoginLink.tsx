@@ -7,15 +7,15 @@ const LoginLink: React.FC = () => (
         <Text size="sm" className="text-black text-base flex items-center justify-center font-poppins text-center mt-4">
             Already have an account?{' '}
             <Anchor
-            
-                href="/login"
+
+                href="/sign-in"
                 size="sm"
                 styles={{
                     root: {
                         color: '#D83232',
-                        display:'flex',
+                        display: 'flex',
                         textDecoration: 'underline',
-                        margin:"0px 8px",
+                        margin: "0px 8px",
                         fontSize: '14px',
                         '&:hover': {
                             backgroundColor: '#DC2626',

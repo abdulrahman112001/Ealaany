@@ -1,6 +1,6 @@
+import { Form, Formik } from "formik";
 import Image from "next/image";
 import BaseInputField from "../atoms/inputs/BaseInputField";
-import { Form, Formik } from "formik";
 
 const Footer = () => {
   return (
@@ -48,7 +48,7 @@ const Footer = () => {
           {/* Contact Links */}
           <div className="!text-start">
             <div className="mb-2">
-            <h3 className="font-semibold text-lg mb-4">Contact Links</h3>
+              <h3 className="font-semibold text-lg mb-4">Contact Links</h3>
               <img src="/images/HorizontalLine.png" alt="HorizontalLine" />
             </div>
             <p className="my-5">+1984656567</p>
@@ -94,26 +94,24 @@ const Footer = () => {
               </a>
             </div>
 
-            <div className="flex space-x-4 gap-4 flex-wrap md:justify-center !my-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 !my-6">
               <a
                 href="/app-store-path"
-                className="inline-flex gap-3 items-center justify-center bg-black text-white px-4 py-2 rounded-md shadow hover:bg-gray-800"
+                className="inline-flex items-center justify-center bg-black text-white px-4 py-2 rounded-md shadow hover:bg-gray-800"
               >
-                <img src="/icons/AppleIcon.svg" alt="App Store" />
-                <div className="flex flex-col items-start">
-                  <span className="text-[10px] text-[#EAEAEA}">
-                    Avilable on the
-                  </span>
+                <img src="/icons/AppleIcon.svg" alt="App Store" className="w-6 h-6" />
+                <div className="flex flex-col items-start ml-2">
+                  <span className="text-[10px] text-[#EAEAEA]">Available on the</span>
                   <span className="text-[#F7F9FA]">App Store</span>
                 </div>
               </a>
               <a
                 href="/app-store-path"
-                className="inline-flex gap-3 items-center justify-center bg-black text-white px-4 py-2 rounded-md shadow hover:bg-gray-800"
+                className="inline-flex items-center justify-center bg-black text-white px-4 py-2 rounded-md shadow hover:bg-gray-800"
               >
-                <img src="/icons/googlePlay.svg" alt="App Store" />
-                <div className="flex flex-col items-start">
-                  <span className="text-[10px] text-[#EAEAEA}">GET IT ON</span>
+                <img src="/icons/googlePlay.svg" alt="App Store" className="w-6 h-6" />
+                <div className="flex flex-col items-start ml-2">
+                  <span className="text-[10px] text-[#EAEAEA]">GET IT ON</span>
                   <span className="text-[#F7F9FA]">Google Play</span>
                 </div>
               </a>

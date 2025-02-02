@@ -20,7 +20,6 @@ const Footer = () => {
           <div>
             <div className="mb-2">
               <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-              <img src="/images/HorizontalLine.png" alt="HorizontalLine" />
             </div>
             <ul className="space-y-5">
               <li>

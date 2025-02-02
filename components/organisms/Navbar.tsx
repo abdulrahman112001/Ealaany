@@ -22,18 +22,10 @@ export default function Navbar() {
   const theme = useMantineTheme()
 
   return (
-    <Box className="pb-0 md:pb-10">
+    <Box className="pb-0 ">
       <header className={`${classes.header} z-50 relative  `}>
         <Group justify="space-between" h="100%">
-          <Link href="/" passHref>
-            <Image
-              src="/images/logo.png"
-              alt="logo"
-              className="md:ml-16"
-              width={195}
-              height={36}
-            />
-          </Link>
+          
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home
@@ -65,6 +57,15 @@ export default function Navbar() {
               Contact us
             </a>
           </Group>
+          <Link href="/" passHref>
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              className="md:ml-16"
+              width={195}
+              height={36}
+            />
+          </Link>
           <Group visibleFrom="sm">
             <Link href="/sign-up" passHref>
               <Button
